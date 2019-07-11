@@ -13,7 +13,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
   <title>
     
-      test_my_site | Xugen-Ma
+      PATEST A1001 题解 | Xugen-Ma
     
   </title>
   <meta name="author" content="Xuegen">
@@ -160,7 +160,7 @@
 	<!-- Page title -->
 	<p>
 		
-			当前文章&nbsp;:&nbsp;《test_my_site》
+			当前文章&nbsp;:&nbsp;《PATEST A1001 题解》
 		
 	</p>
 
@@ -258,6 +258,18 @@
 		插件作者：KELEN
 		插件来源: https://github.com/KELEN/katelog
 -->
+
+	
+		<div class="layout-toc">
+			<div id="layout-toc">
+				<div class="k-catelog-list" id="catelog-list" data-title="文章目录"></div>
+			</div>
+		</div>
+
+		
+		<script src="/special-eureka/plugin/toc/katelog.min.js"></script>
+
+		
 	 
 
 <div class="layout-post">
@@ -265,8 +277,8 @@
 	<div class="article-title">
 		<i class="fa fa-paper-plane-o" aria-hidden="true"></i>
 		
-	<a href="/special-eureka/2019/07/10/test-my-site/" itemprop="url">
-		test_my_site
+	<a href="/special-eureka/2019/07/11/PATEST-A1001-题解/" itemprop="url">
+		PATEST A1001 题解
 	</a>
 
 	</div>
@@ -279,9 +291,9 @@
 
 	发布于
 
-	<a href="/special-eureka/2019/07/10/test-my-site/" itemprop="url">
-		<time datetime="2019-07-10T06:06:40.000Z" itemprop="datePublished">
-	  		2019-07-10
+	<a href="/special-eureka/2019/07/11/PATEST-A1001-题解/" itemprop="url">
+		<time datetime="2019-07-11T03:11:02.000Z" itemprop="datePublished">
+	  		2019-07-11
 	  </time>
 	</a>
 	&nbsp;
@@ -297,9 +309,9 @@
 
 	更新于
 
-	<a href="/special-eureka/2019/07/10/test-my-site/" itemprop="url">
-		<time datetime="2019-07-10T06:06:40.000Z" itemprop="dateUpdated">
-	  		2019-07-10
+	<a href="/special-eureka/2019/07/11/PATEST-A1001-题解/" itemprop="url">
+		<time datetime="2019-07-11T03:11:02.000Z" itemprop="dateUpdated">
+	  		2019-07-11
 	  </time>
 	</a> 
 
@@ -308,7 +320,13 @@
 		</span>
 		<span>
 			<i class="fa fa-tags"></i>
-					
+			
+	
+		<a href="/special-eureka/tags/题解-PAT/" class=" ">
+			题解, PAT
+		</a>
+	
+		
 		</span>
 		
 		
@@ -318,7 +336,26 @@
 	</div>
 
 	<div class="article-content" id="article-content">
-			
+		<p><del>被一道a+b题给卡住三个多小时，自己果然是个人才。</del></p>
+<a id="more"></a>
+
+<h2 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h2><blockquote>
+<h2 id="1001-A-B-Format"><a href="#1001-A-B-Format" class="headerlink" title="1001 A+B Format"></a>1001 A+B Format</h2><p>Calculate a+b and output the sum in standard format – that is, the digits must be separated into groups of three by commas (unless there are less than four digits).</p>
+<h2 id="Input-Specification"><a href="#Input-Specification" class="headerlink" title="Input Specification"></a>Input Specification</h2><p>Each input file contains one test case. Each case contains a pair of integers a and b where -10^6&lt;a,b&lt;10^6. The numbers are separated by a space.</p>
+<h2 id="Output-Specification"><a href="#Output-Specification" class="headerlink" title="Output Specification"></a>Output Specification</h2><p>For each test case, you should output the sum of a and b in one line. The sum must be written in the standard format.</p>
+<h2 id="Simple-Input"><a href="#Simple-Input" class="headerlink" title="Simple Input:"></a>Simple Input:</h2><p>-100000, 9</p>
+<h2 id="Simple-Output"><a href="#Simple-Output" class="headerlink" title="Simple Output:"></a>Simple Output:</h2><p>-999,991</p>
+</blockquote>
+<h2 id="想法"><a href="#想法" class="headerlink" title="想法"></a>想法</h2><p>这道题自己想了很久,一会想想是不是要用二维数组存, 一会想想是不是要给他倒过来、分割、然后再正过来、添逗号，想了三个多小时，最后，只能看题解，看到一位大佬用的是：</p>
+<blockquote>
+<p>从后面开始添逗号，这样不会一边添着，一边改变数组的相对位置，最后变成每两个数字中间就添一个逗号的样子。</p>
+</blockquote>
+<p>他还是想的很到位的，起码比我想得好。</p>
+<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> a, b;</span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; a &gt;&gt; b;</span><br><span class="line">    <span class="built_in">string</span> s = to_string(a + b);</span><br><span class="line">    <span class="keyword">int</span> len = s.length();</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; len; i++) &#123;</span><br><span class="line">        <span class="built_in">cout</span> &lt;&lt; s[i];</span><br><span class="line">        <span class="keyword">if</span> (s[i] == <span class="string">'-'</span>) </span><br><span class="line">            <span class="keyword">continue</span>;</span><br><span class="line">        <span class="keyword">if</span> ((i + <span class="number">1</span>) % <span class="number">3</span> == len % <span class="number">3</span> &amp;&amp; i != len - <span class="number">1</span>) </span><br><span class="line">            <span class="built_in">cout</span> &lt;&lt; <span class="string">","</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><del>我自己写的代码不知道为什么找不到了，先用网上大佬的代码摸鱼。</del></p>
+<h2 id="尾语"><a href="#尾语" class="headerlink" title="尾语"></a>尾语</h2><p>第一次用markdown文法写博客，第一次在自己博客上写题解，两件事重合在一起……<del>白学家，拖出去枪毙五分钟。</del>还是自己在自己的平台上写一些自己的东西，是比较令人开心的事情呢，希望自己今后更博速度快点，不要咕咕咕（求求你不要立flag好不好？）。</p>
+	
 	</div>
 	
 	<div id="current-post-cover" data-scr="/special-eureka/img/cart_cover.jpg"></div>
@@ -336,12 +373,8 @@
 	<span>
 		<a href="javascript: window.scrollTo(0, 0);">返回顶部</a>
 		
-			<a href="/special-eureka/2019/07/11/PATEST-A1001-题解/" title="PATEST A1001 题解" rel="prev">
-				&laquo;上一篇
-			</a>
 		
-		
-			<a href="/special-eureka/2019/07/10/hello-world/" title="Hello World" rel="next">
+			<a href="/special-eureka/2019/07/10/test-my-site/" title="test_my_site" rel="next">
 				下一篇&raquo;
 			</a>
 			
@@ -362,26 +395,22 @@
 			
 					<li>
 						<div class="relate-post-text">
-							<a class="relate-post-title" href="/special-eureka/2019/07/11/PATEST-A1001-题解/" title="PATEST A1001 题解">
-								PATEST A1001 题解			
+							<a class="relate-post-title" href="/special-eureka/2019/07/10/test-my-site/" title="test_my_site">
+								test_my_site			
 							</a>
 							<p class="relate-post-date">
 								<i class="fa fa-calendar"></i>
-								七月 11日, 2019				
+								七月 10日, 2019				
 							</p>
 							<p class="relate-post-content">
-								被一道a+b题给卡住三个多小时，自己果然是个人才。
-
-
-题目
-1001 A+B FormatCalculate a+b and output the sum in standard format – that is, the digi...
+								
 							</p>
 						</div>
 
 						<div class="relate-post-cover">
-							<a href="/special-eureka/2019/07/11/PATEST-A1001-题解/" title="PATEST A1001 题解">				
+							<a href="/special-eureka/2019/07/10/test-my-site/" title="test_my_site">				
 								
-								<img class="lazy" src="/img/placeholder.jpg" data-src="/img/cart_cover.jpg" alt="PATEST A1001 题解"/>
+								<img class="lazy" src="/img/placeholder.jpg" data-src="/img/cart_cover.jpg" alt="test_my_site"/>
 							</a>
 						</div>
 					</li>											
