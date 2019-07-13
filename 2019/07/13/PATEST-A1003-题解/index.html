@@ -1,0 +1,899 @@
+<!--
+	作者：Sariay
+	时间：2018-09-25
+	描述：There may be a bug, but don't worry, QiLing(器灵) says that it can work normally!
+-->
+<!DOCTYPE html>
+<html class="html-loading">
+		
+
+<head><meta name="generator" content="Hexo 3.9.0">
+	<meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
+  <title>
+    
+      PATEST-A1003-题解 | Xugen-Ma
+    
+  </title>
+  <meta name="author" content="Xuegen">
+  <meta name="keywords" content>
+  <meta name="description" content="Stay simple, Stay naive">
+	<!-- favicon -->
+  <link rel="shortcut icon" href="/special-eureka/img/favicon.ico">
+
+  <!-- css -->
+  <link rel="stylesheet" href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="/special-eureka/css/Annie.css">
+  
+  <!-- jquery -->
+	<script src="/special-eureka/js/jquery.min.js"></script>
+
+  <!-- leancloud -->
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
+<script src="/special-eureka/js/leancloud.js"></script>
+</head>
+	<body>
+		<!-- Preloader -->
+
+	<div id="preloader">
+		<div class="pre-container">
+			
+				<div class="spinner">
+					<div class="double-bounce1"></div>
+					<div class="double-bounce2"></div>
+				</div>
+						
+		</div>
+	</div>
+
+
+<!-- header -->
+<header class="fixbackground" data-img-mode="normal" data-normal-src="/special-eureka/img/1.jpg" data-random-max="110" data-random-src="https://sariay.github.io/Random-img/">
+	<div class="mask">
+		<!-- Logo and navigation -->
+		<div class="h-header">
+			<div id="logo">
+				<a href="/">
+						
+						<img src="/special-eureka/img/logo.png" alt="Logo">
+					
+				</a>
+			</div>
+			
+			<div id="navigation-show">
+				<ul>
+	
+		<li class="menu-home">
+			<a href="/special-eureka/" class="menu-item-home">主页</a>
+		</li>
+	
+		<li class="menu-archive">
+			<a href="/special-eureka/archives" class="menu-item-archive">归档</a>
+		</li>
+	
+		<li class="menu-categories">
+			<a href="/special-eureka/categories" class="menu-item-categories">分类</a>
+		</li>
+	
+		<li class="menu-tags">
+			<a href="/special-eureka/tags" class="menu-item-tags">标签</a>
+		</li>
+	
+		<li class="menu-about">
+			<a href="/special-eureka/about" class="menu-item-about">关于</a>
+		</li>
+	
+		<li class="menu-gallery">
+			<a href="/special-eureka/gallery" class="menu-item-gallery">相册</a>
+		</li>
+	
+
+	
+</ul>
+			</div>				
+		</div>
+
+		<!-- motto -->
+		<div class="h-body">	
+			
+				<p class="motto"></p>
+			
+		</div>
+		
+		<!-- others: such as time... -->			
+		<div class="h-footer">
+			<a href="javascript:;" id="read-more"><i class="fa fa-angle-double-down" aria-hidden="true"></i>
+			</a>
+
+			
+				<!-- 
+	This is only a demo, please go to "https://time.is" to set your city time! 
+-->
+<style type="text/css">
+	.header-date {
+		font-size: 1.6rem;
+		color: #fff;
+		position: absolute;
+		bottom: 5px;
+		right: 1rem;
+		writing-mode: tb-rl;
+	}	
+	
+	.header-date a {
+		border-bottom: none;
+	}
+
+	@media only screen and (max-width: 768 ) {
+		.header-date {
+			font-size: 1rem;
+		}			
+	}
+</style>
+<div class="header-date">
+	<a href="https://time.is/Beijing" id="time_is_link" rel="nofollow" ></a>
+	<span id="Beijing_z43d"></span>
+</div>
+<script src="//widget.time.is/zh.js"></script>
+<script>
+	time_is_widget.init({
+		Beijing_z43d:{
+			template:"DATE", 
+			date_format:"year年 monthname dnum日"
+		}
+	});
+</script>
+			
+		</div>
+	</div>
+</header>
+
+<div id="navigation-hide">
+	<!-- Progress bar -->
+	<div id="progress-bar"></div>
+
+	<!-- Progress percent -->
+	<div id="progress-percentage"><h1>0.0%</h1></div>
+
+	<div class="toc-switch"><span class="switch-button">目录</span></div>
+
+	<!-- Page title -->
+	<p>
+		
+			当前文章&nbsp;:&nbsp;《PATEST-A1003-题解》
+		
+	</p>
+
+	<!-- Nav trigger for navigation-H-->
+	<a class="nav-trigger"><span></span></a>
+</div>
+
+<!-- Navigation in div(id="navigation-H") -->
+<nav class="nav-container" id="cd-nav">
+	<div class="nav-header">
+		<h3>Navigation</h3>
+		<a href="javascript:;" class="nav-close"></a>
+	</div>
+	<div class="nav-body">
+		<ul>
+	
+		<li class="menu-home">
+			<a href="/special-eureka/" class="menu-item-home">主页</a>
+		</li>
+	
+		<li class="menu-archive">
+			<a href="/special-eureka/archives" class="menu-item-archive">归档</a>
+		</li>
+	
+		<li class="menu-categories">
+			<a href="/special-eureka/categories" class="menu-item-categories">分类</a>
+		</li>
+	
+		<li class="menu-tags">
+			<a href="/special-eureka/tags" class="menu-item-tags">标签</a>
+		</li>
+	
+		<li class="menu-about">
+			<a href="/special-eureka/about" class="menu-item-about">关于</a>
+		</li>
+	
+		<li class="menu-gallery">
+			<a href="/special-eureka/gallery" class="menu-item-gallery">相册</a>
+		</li>
+	
+
+	
+</ul>
+	</div>
+	<div class="nav-footer">
+		<ul>
+	
+		<li>
+			<a href="http://github.com/" target="_blank">
+				<i class="fa fa-github"></i>
+			</a>
+		</li>
+	
+		<li>
+			<a href="http://github.com/" target="_blank">
+				<i class="fa fa-weibo"></i>
+			</a>
+		</li>
+	
+		<li>
+			<a href="http://github.com/" target="_blank">
+				<i class="fa fa-pinterest"></i>
+			</a>
+		</li>
+	
+		<li>
+			<a href="http://github.com/" target="_blank">
+				<i class="fa fa-instagram"></i>
+			</a>
+		</li>
+	
+		<li>
+			<a href="http://github.com/" target="_blank">
+				<i class="fa fa-twitter"></i>
+			</a>
+		</li>
+	
+		<li>
+			<a href="/special-eureka/atom.xml" target="_blank">
+				<i class="fa fa-rss"></i>
+			</a>
+		</li>
+			
+</ul>
+
+	</div>
+</nav>
+			
+		<!--main-->
+		<main>
+			<!--
+	时间：2018-11-17
+	描述：
+		插件名称：katelog.min.js
+		插件作者：KELEN
+		插件来源: https://github.com/KELEN/katelog
+-->
+
+	
+		<div class="layout-toc">
+			<div id="layout-toc">
+				<div class="k-catelog-list" id="catelog-list" data-title="文章目录"></div>
+			</div>
+		</div>
+
+		
+		<script src="/special-eureka/plugin/toc/katelog.min.js"></script>
+
+		
+	 
+
+<div class="layout-post">
+	<div id="layout-post">
+	<div class="article-title">
+		<i class="fa fa-paper-plane-o" aria-hidden="true"></i>
+		
+	<a href="/special-eureka/2019/07/13/PATEST-A1003-题解/" itemprop="url">
+		PATEST-A1003-题解
+	</a>
+
+	</div>
+
+	<div class="article-meta">
+		<span>
+			<i class="fa fa-calendar"></i>
+			
+
+
+	发布于
+
+	<a href="/special-eureka/2019/07/13/PATEST-A1003-题解/" itemprop="url">
+		<time datetime="2019-07-13T08:56:11.000Z" itemprop="datePublished">
+	  		2019-07-13
+	  </time>
+	</a>
+	&nbsp;
+
+
+
+
+
+			
+
+
+
+
+	更新于
+
+	<a href="/special-eureka/2019/07/13/PATEST-A1003-题解/" itemprop="url">
+		<time datetime="2019-07-13T08:56:11.000Z" itemprop="dateUpdated">
+	  		2019-07-13
+	  </time>
+	</a> 
+
+
+
+		</span>
+		<span>
+			<i class="fa fa-tags"></i>
+			
+	
+		<a href="/special-eureka/tags/PAT-题解-图-迪杰斯特拉算法/" class=" ">
+			PAT,  题解,  图,  迪杰斯特拉算法
+		</a>
+	
+		
+		</span>
+		
+		
+
+
+
+	</div>
+
+	<div class="article-content" id="article-content">
+		<p>由于这道题对于我做 PAT 来说是第一次做带有算法的题，所以本次题解会多出来剖析，来分析局部代码和代码的整体思路，帮助自己能够更好的理解整道题，和迪杰斯特拉算法。</p>
+<p>做 PAT 第一次遇到算法题，又让我想起了去年夏天被算法题支配的恐怖。</p>
+<p>赶紧记下来。</p>
+<h2 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h2><blockquote>
+<p>As an emergency rescue team leader of a city, you are given a special map of your country. The map shows several scattered cities connected by some roads. Amount of rescue teams in each city and the length of each road between any pair of cities are marked on the map. When there is an emergency call to you from some other city, your job is to lead your men to the place as quickly as possible, and at the mean time, call up as many hands on the way as possible.</p>
+<h3 id="Input-Specification"><a href="#Input-Specification" class="headerlink" title="Input Specification:"></a>Input Specification:</h3><p>Each input file contains one test case. For each test case, the first line contains 4 positive integers: <em>N</em> (≤500) - the number of cities (and the cities are numbered from 0 to <em>N</em>−1), <em>M</em> - the number of roads, <em>C</em>1 and <em>C</em>2 - the cities that you are currently in and that you must save, respectively. The next line contains <em>N</em> integers, where the <em>i</em>-th integer is the number of rescue teams in the <em>i</em>-th city. Then <em>M</em> lines follow, each describes a road with three integers <em>c</em>1, <em>c</em>2 and <em>L</em>, which are the pair of cities connected by a road and the length of that road, respectively. It is guaranteed that there exists at least one path from <em>C</em>1 to <em>C</em>2.</p>
+<h3 id="Output-Specification"><a href="#Output-Specification" class="headerlink" title="Output Specification:"></a>Output Specification:</h3><p>For each test case, print in one line two numbers: the number of different shortest paths between <em>C</em>1 and <em>C</em>2, and the maximum amount of rescue teams you can possibly gather. All the numbers in a line must be separated by exactly one space, and there is no extra space allowed at the end of a line.</p>
+<h3 id="Sample-Input"><a href="#Sample-Input" class="headerlink" title="Sample Input:"></a>Sample Input:</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&gt; 5 6 0 2</span><br><span class="line">&gt; 1 2 1 5 3</span><br><span class="line">&gt; 0 1 1</span><br><span class="line">&gt; 0 2 2</span><br><span class="line">&gt; 0 3 1</span><br><span class="line">&gt; 1 2 1</span><br><span class="line">&gt; 2 4 1</span><br><span class="line">&gt; 3 4 1</span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure>
+</blockquote>
+<blockquote>
+<h3 id="Sample-Output"><a href="#Sample-Output" class="headerlink" title="Sample Output:"></a>Sample Output:</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&gt; 2 4</span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure>
+</blockquote>
+<h2 id="中文翻译"><a href="#中文翻译" class="headerlink" title="中文翻译"></a>中文翻译</h2><p>第一行<br>N 城市的数量，城市被标号从0~n-1。<br>M 边数。<br>C1,C2 C1城-&gt;C2城。</p>
+<p>第二行<br>包含N整数，第i个表示第i个城市救援队的数目。</p>
+<p>m行<br>边的起始点，终点，边的权值。</p>
+<p>目的：找出最短路中，能聚集最多救援人员的路</p>
+<h2 id="想法"><a href="#想法" class="headerlink" title="想法"></a>想法</h2><p>这道题是一道典型的最短路问题，所以选择了迪杰斯特拉算法，并且在原有的算法基础上，新增了权值数组，来记录从起点到某一点的点权。当路径长度相同的时候，更新为权重较大的那一方即可。</p>
+<p>本题做了三个多小时，才依靠着 <a href="https://blog.csdn.net/qq_26398495/article/details/82053086?tdsourcetag=s_pcqq_aiomsg" target="_blank" rel="noopener">题解</a> 的帮助做完，证明自己还是比较菜的。</p>
+<h2 id="源代码"><a href="#源代码" class="headerlink" title="源代码"></a>源代码</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> maxn = <span class="number">505</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span>  INF = <span class="number">1000000000</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> G[maxn][maxn]; <span class="comment">//图</span></span><br><span class="line"><span class="keyword">int</span> d[maxn];  <span class="comment">//起点到此点的距离</span></span><br><span class="line"><span class="keyword">int</span> vis[maxn]; <span class="comment">//标记是否访问</span></span><br><span class="line"><span class="keyword">int</span> weight[maxn]; <span class="comment">//点的权重</span></span><br><span class="line"><span class="keyword">int</span> w[maxn];  <span class="comment">//到每个点的最短路径的累计权重</span></span><br><span class="line"><span class="keyword">int</span> num[maxn]; <span class="comment">//到每个点的最短路径条数</span></span><br><span class="line"><span class="keyword">int</span> N, M, C1, C2;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">Dijkstra</span><span class="params">(<span class="keyword">int</span> s)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	d[s] = <span class="number">0</span>;</span><br><span class="line">	num[s] = <span class="number">1</span>;</span><br><span class="line">	w[s] = weight[s];</span><br><span class="line"></span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; N; i++)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">int</span> u = <span class="number">-1</span>;</span><br><span class="line">		<span class="keyword">int</span> MIN = INF;</span><br><span class="line">		<span class="comment">/*</span></span><br><span class="line"><span class="comment">			在所有的顶点中，找出来没有被访问的，且起点到此点距离最短的</span></span><br><span class="line"><span class="comment">		*/</span></span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; N; j++)</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="keyword">if</span> (vis[j] == <span class="literal">false</span> &amp;&amp; d[j] &lt; MIN)</span><br><span class="line">			&#123;</span><br><span class="line">				u = j;</span><br><span class="line">				MIN = d[j];</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;<span class="comment">//end for j</span></span><br><span class="line"></span><br><span class="line">		<span class="keyword">if</span> (u == <span class="number">-1</span>)<span class="keyword">return</span>;<span class="comment">//u之后没有路了</span></span><br><span class="line"></span><br><span class="line">		vis[u] = <span class="literal">true</span>;<span class="comment">//置u这个点被访问过了</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">		</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> v = <span class="number">0</span>; v &lt; N; v++)</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="keyword">if</span> (vis[v] == <span class="literal">false</span> &amp;&amp; G[u][v] != INF)</span><br><span class="line">			&#123;</span><br><span class="line">				<span class="keyword">if</span> (d[u] + G[u][v] &lt; d[v])<span class="comment">//找出来u之后，离u距离最短的点v</span></span><br><span class="line">				&#123;</span><br><span class="line">					d[v] = d[u] + G[u][v];<span class="comment">//更新v到源点的距离</span></span><br><span class="line">					w[v] = w[u] + weight[v];<span class="comment">//更新v到源点的权重</span></span><br><span class="line">					num[v] = num[u];<span class="comment">//更新最短路径条数</span></span><br><span class="line">				&#125;</span><br><span class="line">				<span class="keyword">else</span> <span class="keyword">if</span> (d[u] + G[u][v] == d[v])</span><br><span class="line">				&#123;</span><br><span class="line">					num[v]+=num[u];<span class="comment">//每个点不止被访问一次，在此之前这个点就被初始化过，</span></span><br><span class="line">					<span class="keyword">if</span> (w[u] + weight[v] &gt; w[v])</span><br><span class="line">					&#123;</span><br><span class="line">						w[v] = w[u] + weight[v];<span class="comment">//路径长相同，保存权值较大的</span></span><br><span class="line">					&#125;</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> c1, c2, L;</span><br><span class="line">	<span class="built_in">cin</span> &gt;&gt; N &gt;&gt; M &gt;&gt; C1 &gt;&gt; C2;</span><br><span class="line">	fill(d, d + maxn, INF);</span><br><span class="line">	<span class="built_in">memset</span>(vis, <span class="literal">false</span>, <span class="keyword">sizeof</span>(vis));</span><br><span class="line">	fill(G[<span class="number">0</span>], G[<span class="number">0</span>] + maxn * maxn, INF);</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; N; i++)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="built_in">cin</span> &gt;&gt; weight[i];</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; M; i++)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="built_in">cin</span> &gt;&gt; c1 &gt;&gt; c2 &gt;&gt; L;</span><br><span class="line">		G[c1][c2] = L;</span><br><span class="line">		G[c2][c1] = L;</span><br><span class="line"></span><br><span class="line">	&#125;</span><br><span class="line">	Dijkstra(C1);</span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; num[C2] &lt;&lt;<span class="string">" "</span>&lt;&lt; w[C2];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="代码剖析"><a href="#代码剖析" class="headerlink" title="代码剖析"></a>代码剖析</h2><p>一. 首先从 main() 函数看起。</p>
+   <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">fill(d, d + maxn, INF);</span><br><span class="line"><span class="built_in">memset</span>(vis, <span class="literal">false</span>, <span class="keyword">sizeof</span>(vis));</span><br></pre></td></tr></table></figure>
+
+<p>   fill 函数和 memset 函数都是将某一块内存快速更改为同一内容的函数，但 memset 只能用在对于字符，串，和整型0、-1的填充， fill 函数可以用来填充整型变量。</p>
+<p>二. Dijistra 函数。</p>
+<ol>
+<li><p>初始化</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">d[s] = <span class="number">0</span>;</span><br><span class="line">num[s] = <span class="number">1</span>;</span><br><span class="line">w[s] = weight[s];</span><br></pre></td></tr></table></figure>
+
+<p>   这三行代码是对源点做处理：</p>
+<ul>
+<li>源点到自身的距离应当为0。</li>
+<li>通路数目至少为 1。</li>
+<li>刚开始时，累计权重即为自身的权重。</li>
+</ul>
+</li>
+<li><p>for 循环 n 次</p>
+<ol>
+<li><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> u = <span class="number">-1</span>;</span><br><span class="line">		<span class="keyword">int</span> MIN = INF;</span><br><span class="line">		<span class="comment">/*</span></span><br><span class="line"><span class="comment">			在所有的顶点中，找出来没有被访问的，</span></span><br><span class="line"><span class="comment">			且起点到此点距离最短的</span></span><br><span class="line"><span class="comment">		*/</span></span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; N; j++)</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="keyword">if</span> (vis[j] == <span class="literal">false</span> &amp;&amp; d[j] &lt; MIN)</span><br><span class="line">			&#123;</span><br><span class="line">				u = j;</span><br><span class="line">				MIN = d[j];</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;<span class="comment">//end for j</span></span><br><span class="line"></span><br><span class="line">		<span class="keyword">if</span> (u == <span class="number">-1</span>)<span class="keyword">return</span>;<span class="comment">//u之后没有路了</span></span><br></pre></td></tr></table></figure>
+
+<p>这 16 行代码的目的时为了找到在所有的顶点中，使d[u]最小且还未被访问的顶点的标号。</p>
+<ol start="2">
+<li><p>以第 u 点为基准，向后搜索 v $<em>0$—v$</em>{n-1}​$ 的点</p>
+ <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (d[u] + G[u][v] &lt; d[v])<span class="comment">//找出来u之后，离u距离最短的点v</span></span><br><span class="line">&#123;</span><br><span class="line">	d[v] = d[u] + G[u][v];<span class="comment">//更新v到源点的距离</span></span><br><span class="line">	w[v] = w[u] + weight[v];<span class="comment">//更新v到源点的权重</span></span><br><span class="line">	num[v] = num[u];<span class="comment">//更新最短路径条数</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">else</span> <span class="keyword">if</span> (d[u] + G[u][v] == d[v])</span><br><span class="line">&#123;</span><br><span class="line">	num[v]+=num[u];<span class="comment">//每个点不止被访问一次，在此之前这个点就被初始化过，</span></span><br><span class="line">	<span class="keyword">if</span> (w[u] + weight[v] &gt; w[v])</span><br><span class="line">	&#123;</span><br><span class="line">		w[v] = w[u] + weight[v];<span class="comment">//路径长相同，保存权值较大的</span></span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>  这十五行代码中的 if - else 结构是必不可少的。如果去掉了 else 语句，函数会在第 7 行陷入死循环。</p>
+<blockquote>
+<p>参考链接：<a href="https://blog.csdn.net/qq_26398495/article/details/81606309" target="_blank" rel="noopener">https://blog.csdn.net/qq_26398495/article/details/81606309</a> </p>
+</blockquote>
+</li>
+</ol>
+</li>
+</ol>
+<blockquote>
+<h2 id="Dijstra-算法伪代码"><a href="#Dijstra-算法伪代码" class="headerlink" title="Dijstra 算法伪代码"></a>Dijstra 算法伪代码</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">&gt; //G为图，一般设为全局变量，数组d为源点到达各个点的最短路径长度，s为起点</span><br><span class="line">&gt; Dijkstra(G, d[], s) &#123;</span><br><span class="line">&gt;     初始化;</span><br><span class="line">&gt;     for(循环n次) &#123;</span><br><span class="line">&gt;         u = 使d[u]最小且还未被访问的顶点的标号;  //暴力搜索 or 堆结构</span><br><span class="line">&gt;         标记u已被访问;</span><br><span class="line">&gt;         for(从u出发能到达的所有顶点v) &#123;</span><br><span class="line">&gt;             if (v未被访问 &amp;&amp; 以u为中介点 使 s到顶点v的最短距离d[v]更优) &#123;</span><br><span class="line">&gt;                 优化d[v];</span><br><span class="line">&gt; 	            //可以在此处保存路径 把u保存为v的前驱即可</span><br><span class="line">&gt; 	            pre[v] = u;</span><br><span class="line">&gt;             &#125;</span><br><span class="line">&gt;         &#125;</span><br><span class="line">&gt;     &#125;//for</span><br><span class="line">&gt; &#125;//Dijkstra</span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure>
+</blockquote>
+<blockquote>
+<p><strong>实现差异：</strong> <strong>主要区别</strong>主要在于如何枚举从<code>u</code>出发到达的顶点<code>v</code>上；<strong>邻接矩阵</strong>需要枚举所有结点查看顶点<code>v</code>能否到达<code>u</code>，而<strong>邻接表</strong>则可以直接得到这些顶点<code>v</code>；</p>
+<p>注： 若题目所给为无向图，把它转化为两条有向边即可！</p>
+<h2 id="代码举例"><a href="#代码举例" class="headerlink" title="代码举例"></a>代码举例</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line">&gt; <span class="keyword">int</span> G[maxn][maxn]; <span class="comment">//顶点数，图</span></span><br><span class="line">&gt; </span><br><span class="line">&gt; <span class="comment">//邻接矩阵版本</span></span><br><span class="line">&gt; <span class="function"><span class="keyword">void</span> <span class="title">Dijkstra</span><span class="params">(<span class="keyword">int</span> s)</span> </span>&#123;</span><br><span class="line">&gt;     fill(d, d + maxn, INF); <span class="comment">//初始为不可达(慎用memset)</span></span><br><span class="line">&gt;     d[s] = <span class="number">0</span>;</span><br><span class="line">&gt;     </span><br><span class="line">&gt;     <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++) &#123; <span class="comment">//循环n次(第一次找到的肯定是起点本身，正好完成初始化)</span></span><br><span class="line">&gt; </span><br><span class="line">&gt; 	     <span class="comment">//找到未访问结点中d[]最小的 </span></span><br><span class="line">&gt;         <span class="keyword">int</span> u = <span class="number">-1</span>, MIN = INF;</span><br><span class="line">&gt;         <span class="keyword">for</span>(<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; n; j++) &#123;</span><br><span class="line">&gt;             <span class="keyword">if</span>(vis[j] == <span class="literal">false</span> &amp;&amp; d[j] &lt; MIN) &#123;</span><br><span class="line">&gt;                 u = j;</span><br><span class="line">&gt;                 MIN = d[j];</span><br><span class="line">&gt;             &#125;</span><br><span class="line">&gt;         &#125;</span><br><span class="line">&gt; </span><br><span class="line">&gt;         <span class="keyword">if</span>(u == <span class="number">-1</span>)  <span class="comment">//找不到小于INF的d[u]，说明剩下的顶点和起点s不连通</span></span><br><span class="line">&gt;             <span class="keyword">return</span>;</span><br><span class="line">&gt; </span><br><span class="line">&gt;         vis[u] = <span class="literal">true</span>; <span class="comment">//标记已访问</span></span><br><span class="line">&gt;         <span class="keyword">for</span>(<span class="keyword">int</span> v = <span class="number">0</span>; v &lt; n; v++) &#123; <span class="comment">//更新</span></span><br><span class="line">&gt;             <span class="comment">//如果v未访问 &amp;&amp; u能到达v &amp;&amp; 以u为中介点可以是d[v]更优</span></span><br><span class="line">&gt;             <span class="keyword">if</span>(vis[v] == <span class="literal">false</span> &amp;&amp; G[u][v] != INF &amp;&amp; d[u] + G[u][v] &lt; d[v]) &#123;</span><br><span class="line">&gt;                 d[v] = G[u][v] + d[u];</span><br><span class="line">&gt; 	            pre[v] = u;</span><br><span class="line">&gt;             &#125;</span><br><span class="line">&gt;         &#125;</span><br><span class="line">&gt; </span><br><span class="line">&gt;     &#125;<span class="comment">//for - i</span></span><br><span class="line">&gt; &#125;<span class="comment">//Dijkstra</span></span><br><span class="line">&gt; </span><br><span class="line">&gt; <span class="comment">//时间复杂度：两层循环 ,O(n^2)</span></span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure>
+</blockquote>
+<blockquote>
+<h2 id="常考题型"><a href="#常考题型" class="headerlink" title="常考题型"></a>常考题型</h2><p>题目考法<br>很多时候最短路径不止一条，就需要题目所给的其他条件选择其中一条；一般有一下三种考法：</p>
+<ol>
+<li>给每条边再增加一个边权（比如花费），然后要求最短路径有多条时，选择花费之和最小的；</li>
+<li>给每个点增加一个点权，有多条最短路径时，选择点权之和最大（最小）的；</li>
+<li>直接问有多少条最短路径；</li>
+</ol>
+<p>这三种出法都只需增加一个数组，存放新增的边权或点权或最短路径条数然后在Dijkstra()中修改 更新d[v] 的那一步操作即可；其他无需改变；</p>
+</blockquote>
+</li>
+</ol>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p>作者：3stone_<br>原文：</p>
+<ul>
+<li><a href="https://blog.csdn.net/qq_26398495/article/details/81606309" target="_blank" rel="noopener">迪杰斯特拉伪代码、代码举例、常考题型</a></li>
+<li><a href="https://blog.csdn.net/qq_26398495/article/details/82053086" target="_blank" rel="noopener">题目参考</a></li>
+</ul>
+	
+	</div>
+	
+	<div id="current-post-cover" data-scr="/special-eureka/img/cart_cover.jpg"></div>
+
+	<!-- relate post, comment...-->
+	<div class="investment-container">
+		<div class="investment-header">
+			<div class="investment-title-1">
+				<div class="on">相关文章</div>
+				<div>评论</div>
+				<div>分享</div>
+			</div>
+			<div class="investment-title-2">	            
+				
+	<span>
+		<a href="javascript: window.scrollTo(0, 0);">返回顶部</a>
+		
+		
+			<a href="/special-eureka/2019/07/11/map用法/" title="map用法" rel="next">
+				下一篇&raquo;
+			</a>
+			
+	</span>
+
+
+      		
+			</div>	
+		</div>
+		
+		<div class="investment-content">
+			<div class="investment-content-list">
+				
+
+<div class="relate-post">
+	
+		<ul>
+			
+					<li>
+						<div class="relate-post-text">
+							<a class="relate-post-title" href="/special-eureka/2019/07/11/map用法/" title="map用法">
+								map用法			
+							</a>
+							<p class="relate-post-date">
+								<i class="fa fa-calendar"></i>
+								七月 11日, 2019				
+							</p>
+							<p class="relate-post-content">
+								什么是 mapmap 很多人说是一种关联容器，又提什么 stl 一堆的东西
+map 就我自己的理解，它实质上就是一种映射的关系，它有两个值，key，value，建立的关系是 key -&gt; value的映射。所以，通过映射的定义我...
+							</p>
+						</div>
+
+						<div class="relate-post-cover">
+							<a href="/special-eureka/2019/07/11/map用法/" title="map用法">				
+								
+								<img class="lazy" src="/img/placeholder.jpg" data-src="/img/cart_cover.jpg" alt="map用法"/>
+							</a>
+						</div>
+					</li>											
+			
+			
+					<li>
+						<div class="relate-post-text">
+							<a class="relate-post-title" href="/special-eureka/2019/07/11/PATEST-A1002-题解/" title="PATEST-A1002-题解">
+								PATEST-A1002-题解			
+							</a>
+							<p class="relate-post-date">
+								<i class="fa fa-calendar"></i>
+								七月 11日, 2019				
+							</p>
+							<p class="relate-post-content">
+								题目
+ 1002 A+B for Polynomials
+This time, you are supposed to find A+B where A and B are two polynomials.
+
+Input Specif...
+							</p>
+						</div>
+
+						<div class="relate-post-cover">
+							<a href="/special-eureka/2019/07/11/PATEST-A1002-题解/" title="PATEST-A1002-题解">				
+								
+								<img class="lazy" src="/img/placeholder.jpg" data-src="/img/cart_cover.jpg" alt="PATEST-A1002-题解"/>
+							</a>
+						</div>
+					</li>											
+			
+			
+					<li>
+						<div class="relate-post-text">
+							<a class="relate-post-title" href="/special-eureka/2019/07/11/PATEST-A1001-题解/" title="PATEST A1001 题解">
+								PATEST A1001 题解			
+							</a>
+							<p class="relate-post-date">
+								<i class="fa fa-calendar"></i>
+								七月 11日, 2019				
+							</p>
+							<p class="relate-post-content">
+								被一道a+b题给卡住三个多小时，自己果然是个人才。
+
+
+题目
+1001 A+B FormatCalculate a+b and output the sum in standard format – that is, the digi...
+							</p>
+						</div>
+
+						<div class="relate-post-cover">
+							<a href="/special-eureka/2019/07/11/PATEST-A1001-题解/" title="PATEST A1001 题解">				
+								
+								<img class="lazy" src="/img/placeholder.jpg" data-src="/img/cart_cover.jpg" alt="PATEST A1001 题解"/>
+							</a>
+						</div>
+					</li>											
+			
+			
+					<li>
+						<div class="relate-post-text">
+							<a class="relate-post-title" href="/special-eureka/2019/07/10/test-my-site/" title="test_my_site">
+								test_my_site			
+							</a>
+							<p class="relate-post-date">
+								<i class="fa fa-calendar"></i>
+								七月 10日, 2019				
+							</p>
+							<p class="relate-post-content">
+								
+							</p>
+						</div>
+
+						<div class="relate-post-cover">
+							<a href="/special-eureka/2019/07/10/test-my-site/" title="test_my_site">				
+								
+								<img class="lazy" src="/img/placeholder.jpg" data-src="/img/cart_cover.jpg" alt="test_my_site"/>
+							</a>
+						</div>
+					</li>											
+			
+			
+					<li>
+						<div class="relate-post-text">
+							<a class="relate-post-title" href="/special-eureka/2019/07/10/hello-world/" title="Hello World">
+								Hello World			
+							</a>
+							<p class="relate-post-date">
+								<i class="fa fa-calendar"></i>
+								七月 10日, 2019				
+							</p>
+							<p class="relate-post-content">
+								Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using ...
+							</p>
+						</div>
+
+						<div class="relate-post-cover">
+							<a href="/special-eureka/2019/07/10/hello-world/" title="Hello World">				
+								
+								<img class="lazy" src="/img/placeholder.jpg" data-src="/img/cart_cover.jpg" alt="Hello World"/>
+							</a>
+						</div>
+					</li>											
+			
+			
+		</ul>
+	
+</div>	
+			</div>
+			<div class="investment-content-list">
+				<div class="layout-comment">
+
+	
+
+		
+
+			<!-- I don't know !!!-->
+			<div>Please check the comment setting in config.yml of hexo-theme-Annie!</div>
+			
+		
+		
+	
+
+</div>
+			</div>
+			<div class="investment-content-list">
+				<div class="layout-share">
+	
+	
+
+		
+			
+			<!-- socialShare share -->
+			<div class="social-share"></div>
+
+<!--  css & js -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/css/share.min.css">
+<script async src="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/js/social-share.min.js"></script>
+			
+		
+		
+	
+</div>
+
+
+			</div>
+		</div>	
+	</div>
+	</div>
+</div>
+
+
+
+	<!-- leancloud -->
+	<!--
+	时间：2018-11-27
+	描述：
+		文章访问量：visitors
+		文章喜欢量：likes	
+		文章排行榜：topNPost
+		其他得说明：
+			01-Cookie相关的函数 
+				https://blog.csdn.net/somehow1002/article/details/78511541（Author：somehow1002）
+			02-visitors相关的函数 
+				https://blog.csdn.net/u013553529/article/details/63357382（Author：爱博客大伯）
+				https://notes.doublemine.me/2015-10-21-为NexT主题添加文章阅读量统计功能.html（Author：夏末）
+			03-topNPost相关的函数
+				https://hoxis.github.io/hexo-next-read-rank.html（Author：hoxis）
+			04-likes相关的函数，
+				参考了01 & 02进行简单的设计与实现
+-->
+
+
+	
+
+
+<!-- show math formula -->
+
+
+
+	 
+	<script src="/special-eureka/plugin/clipboard/clipboard.js"></script>
+	<script>
+		// Copy code !
+	    function codePreprocessing() {
+	        $("#article-content .highlight").each(function() {
+
+	            $(this).wrap('<div id="post-code"></div>');
+
+	        })
+
+	        $("#article-content #post-code").each(function() {
+
+	            $(this).prepend('<nav class="copy-nav"><span><i class="code-language"></i></span></nav>');
+
+	        })
+
+	        $("#article-content .copy-nav").each(function() {
+	            var temp = $(this).next().attr('class'),
+	                language = ((temp.length > 9) && (temp != null)) ? temp.substr(10) : "none"; //why 9? Need to check language?
+
+	            $(this).find('.code-language').text(language);
+
+	            $(this).append('<span class="copy-btn"><i class="fa fa-copy" aria-hidden="true"></i></span>');
+
+	        });
+	    }
+
+		function codeCopy() {
+		    $('#article-content #post-code').each(function(i) {
+		        var codeCopyId = 'codeCopy-' + i;
+
+		        var codeNode = $(this).find('.code'),
+		            copyButton = $(this).find('.copy-btn');
+
+		        codeNode.attr('id', codeCopyId);
+		        copyButton.attr('data-clipboard-target-id', codeCopyId);
+		    })
+
+		    
+			var clipboard = new ClipboardJS('.copy-btn', {
+					target: function(trigger) {
+						return document.getElementById(trigger.getAttribute('data-clipboard-target-id'));
+					}
+		      	});
+
+			//pure js
+			function showTooltip(elem, msg) {		   
+				elem.setAttribute('aria-label', msg);
+				elem.setAttribute('class', 'copy-btn copy-status');
+				setTimeout(function() {
+					elem.setAttribute('class', 'copy-btn');
+				}, 2000);
+			}
+
+			clipboard.on('success', function(e) {
+			    e.clearSelection();
+			    console.info('Action:', e.action);		   
+			    console.info('Trigger:', e.trigger);
+			    showTooltip(e.trigger, 'Copied!');
+			    
+			});
+			clipboard.on('error', function(e) {
+			    console.error('Action:', e.action);
+			    console.error('Trigger:', e.trigger);
+			});
+		
+
+		}
+
+		if ($('.layout-post').length) {
+		    codePreprocessing();
+		    codeCopy();
+		} 
+	</script>
+
+
+
+
+
+<link rel="stylesheet" href="/special-eureka/plugin/fancybox/jquery.fancybox.css">
+<script src="/special-eureka/plugin/fancybox/jquery.fancybox.js"></script>
+
+<script type="text/javascript">
+	var titleID = $('.article-title a'),
+		imageID = $('.article-content img'),
+		videoID = $('.article-content video');
+
+	var postTitle = titleID.text() ? titleID.text() : "No post title!";
+
+	imageID.each(function() {
+		var imgPath = $(this).attr('src'),
+			imgTitle = $(this).attr('alt') ? $(this).attr('alt') : "No image description!";
+
+		//给每个匹配的<img>元素打包, 即添加父元素<a>
+		$(this).wrap('<a data-fancybox="gallery" data-caption=" 《 ' + postTitle + ' 》 ' + imgTitle + ' "  href=" ' + imgPath + ' "> </a>');
+	});
+
+	videoID.each(function() {
+		var videoPath = $(this).attr('src');
+
+		//给每个匹配的<img>元素打包, 即添加父元素<a>
+		$(this).wrap('<a data-fancybox href=" ' + videoPath + ' "> </a>');
+	});
+	//TODO：支持html5 video
+
+	if($('#layout-post').length) {
+		$('[data-fancybox="gallery"]').fancybox({
+			loop: true,
+			buttons: [
+				"zoom",
+				"share",
+				"slideShow",
+				"fullScreen",
+				//"download",
+				"thumbs",
+				"close"
+			],
+			protect: false
+		});
+	}
+</script>
+		</main>
+
+		<!--footer-->
+		<footer>
+	<div class="social">
+		<ul>
+	
+		<li>
+			<a href="http://github.com/" target="_blank">
+				<i class="fa fa-github"></i>
+			</a>
+		</li>
+	
+		<li>
+			<a href="http://github.com/" target="_blank">
+				<i class="fa fa-weibo"></i>
+			</a>
+		</li>
+	
+		<li>
+			<a href="http://github.com/" target="_blank">
+				<i class="fa fa-pinterest"></i>
+			</a>
+		</li>
+	
+		<li>
+			<a href="http://github.com/" target="_blank">
+				<i class="fa fa-instagram"></i>
+			</a>
+		</li>
+	
+		<li>
+			<a href="http://github.com/" target="_blank">
+				<i class="fa fa-twitter"></i>
+			</a>
+		</li>
+	
+		<li>
+			<a href="/special-eureka/atom.xml" target="_blank">
+				<i class="fa fa-rss"></i>
+			</a>
+		</li>
+			
+</ul>
+
+	</div>
+		
+	<div class="copyright">
+		<p>
+			 
+				&copy;2017 - 2019, content by Xuegen. All Rights Reserved.
+			
+			
+			
+
+	<!-- busuanzi -->
+	<!-- busuanzi -->
+
+		
+	<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+	
+
+		<span id="busuanzi_container_page_pv">
+	  		本文总阅读量<span id="busuanzi_value_page_pv"></span>次
+		</span>
+
+	
+
+
+
+
+		</p>
+		<p>
+			<a href="http://hexo.io/" title="Hexo" target="_blank" rel="noopener">Hexo</a> Theme <a href="https://github.com/Sariay/hexo-theme-Annie" title="Annie" target="_blank" rel="noopener">Annie</a> by Sariay.
+			<a href="javascript:zh_tran('s');" class="zh_click" id="zh_click_s">简体</a> 
+			<a href="javascript:zh_tran('t');" class="zh_click" id="zh_click_t">繁體</a>				
+		</p>
+	</div>		
+</footer>
+		
+	<!-- set '1' to show motto in all pages! -->
+
+	<script src="/special-eureka/plugin/motto/motto.js"></script>
+	
+	<script type="text/javascript">
+		$(".motto").html( getMingYanContent() );
+	</script>	
+
+
+
+
+
+<!-- love effect -->
+
+
+<!-- back to top -->
+
+	
+	<div id="totop">
+  		<a href="javascript:;"  name="TOTOP" class="fa fa-arrow-up" ></a>
+	</div>
+
+
+
+
+<!-- site analysis -->
+
+
+	<!-- site-analysis -->
+	
+	
+	
+	
+	
+ 
+
+<script src="/special-eureka/plugin/vibrant/vibrant.js"></script>
+<script src="/special-eureka/plugin/chinese/chinese.js"></script>
+<script src="/special-eureka/plugin/imgLazyLoader/yall.min.js"></script>
+<script src="/special-eureka/plugin/imgResize/jquery.resizeimagetoparent.min.js"></script>
+<script src="/special-eureka/plugin/nicescroll/jquery.nicescroll.js"></script>
+<script src="/special-eureka/js/resizediv.js"></script>
+<script src="/special-eureka/js/main.js"></script>
+	</body>	
+</html>
