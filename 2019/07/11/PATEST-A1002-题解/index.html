@@ -311,7 +311,7 @@
 
 	<a href="/special-eureka/2019/07/11/PATEST-A1002-题解/" itemprop="url">
 		<time datetime="2019-07-11T06:23:27.000Z" itemprop="dateUpdated">
-	  		2019-07-11
+	  		2019-07-22
 	  </time>
 	</a> 
 
@@ -322,8 +322,12 @@
 			<i class="fa fa-tags"></i>
 			
 	
-		<a href="/special-eureka/tags/PAT-题解/" class=" ">
-			PAT,  题解
+		<a href="/special-eureka/tags/题解/" class=" ">
+			题解
+		</a>
+	
+		<a href="/special-eureka/tags/PAT/" class=" ">
+			PAT
 		</a>
 	
 		
@@ -338,37 +342,31 @@
 	<div class="article-content" id="article-content">
 		<h2 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h2><blockquote>
 <p> <em>1002 A+B for Polynomials</em></p>
-<p>This time, you are supposed to find <em>A</em>+<em>B</em> where <em>A</em> and <em>B</em> are two polynomials.</p>
+<p> This time, you are supposed to find <em>A</em>+<em>B</em> where <em>A</em> and <em>B</em> are two polynomials.</p>
 <ul>
-<li>Input Specification:*</li>
-</ul>
+<li><p>Input Specification:*</p>
 <p>Each input file contains one test case. Each case occupies 2 lines, and each line contains the information of a polynomial:</p>
 <p>K N1 aN1 ……Nk aNk</p>
 <p>where <em>K</em> is the number of nonzero terms in the polynomial, <em>N**i</em> and <em>a<strong>N</strong>i</em> (<em>i</em>=1,2,⋯,<em>K</em>) are the exponents and coefficients, respectively. It is given that 1≤<em>K</em>≤10，0≤NK&lt;⋯&lt;N2&lt;N1≤1000.</p>
-<ul>
-<li>Output Specification:*</li>
-</ul>
+</li>
+<li><p>Output Specification:*</p>
 <p>For each test case you should output the sum of <em>A</em> and <em>B</em> in one line, with the same format as the input. Notice that there must be NO extra space at the end of each line. Please be accurate to 1 decimal place.</p>
-<ul>
-<li>Sample Input:*</li>
+</li>
+<li><p>Sample Input:*</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&gt;  2 1 2.4 0 3.2</span><br><span class="line">&gt;  2 2 1.5 1 0.5</span><br></pre></td></tr></table></figure>
+</li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&gt; 2 1 2.4 0 3.2</span><br><span class="line">&gt; 2 2 1.5 1 0.5</span><br></pre></td></tr></table></figure>
 </blockquote>
 <blockquote>
 <ul>
-<li>Sample Output:*</li>
+<li><p>Sample Output:*</p>
+<p>​<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt;  3 2 1.5 1 2.9 0 3.2</span><br></pre></td></tr></table></figure></p>
+</li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt; 3 2 1.5 1 2.9 0 3.2</span><br></pre></td></tr></table></figure>
 </blockquote>
 <blockquote>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">## 想法</span><br><span class="line"></span><br><span class="line">本以为要用数组来解，但是想一想光搜索就容易爆时间，我又不想自己写一个二叉排序树的算法。</span><br><span class="line"></span><br><span class="line">这样一想，没有思路，我就去看题解了。</span><br><span class="line"></span><br><span class="line">发现 map 正好是一个映射关系，恰好符合这道题的要求。</span><br><span class="line"></span><br><span class="line">所以本题的解题思路就是，如果 first  对应的值存在就加上 second，对应的值不存在就存入，之后利用反向迭代器统计非零元个数，并输出结果。</span><br><span class="line"></span><br><span class="line">最后输出应当使用 printf ，使用 cout 会爆流。</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">## 代码</span><br><span class="line"></span><br><span class="line">```c++</span><br><span class="line">#include &lt;iostream&gt;</span><br><span class="line">#include &lt;map&gt;</span><br><span class="line"></span><br><span class="line">using namespace std;</span><br><span class="line"></span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">	int a_count, b_count;		 //多项式非零元个数</span><br><span class="line">	map&lt;int, double&gt; p;</span><br><span class="line">	</span><br><span class="line">	</span><br><span class="line">	cin &gt;&gt; a_count;</span><br><span class="line">	for (int j = 0; j &lt; a_count; ++j)</span><br><span class="line">	&#123;</span><br><span class="line">		int exp;//指数</span><br><span class="line">		double coe;//真数</span><br><span class="line">		cin &gt;&gt; exp &gt;&gt; coe;</span><br><span class="line">		/*map.insert()函数在执行时,若const值已经存在,就不再执行插入操作*/</span><br><span class="line">		if (!p.insert(make_pair(exp, coe)).second )</span><br><span class="line">		&#123;</span><br><span class="line">			p[exp] = p[exp] + coe;</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	</span><br><span class="line">	cin &gt;&gt; b_count;</span><br><span class="line">	for (int j = 0; j &lt; b_count; ++j)</span><br><span class="line">	&#123;</span><br><span class="line">		int exp;//指数</span><br><span class="line">		double coe;//真数</span><br><span class="line">		cin &gt;&gt; exp &gt;&gt; coe;</span><br><span class="line">		if (!p.insert(make_pair(exp, coe)).second )</span><br><span class="line">		&#123;</span><br><span class="line">			p[exp] = p[exp] + coe;</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	</span><br><span class="line">	int total_count = 0;</span><br><span class="line">	for (map&lt;int, double&gt;::reverse_iterator iter = p.rbegin();</span><br><span class="line">		iter != p.rend(); iter++)</span><br><span class="line">	&#123;</span><br><span class="line">		if ((*iter).second != 0)</span><br><span class="line">		&#123;</span><br><span class="line">			total_count++;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	</span><br><span class="line">	cout &lt;&lt; total_count;</span><br><span class="line">	for (map&lt;int, double&gt;::reverse_iterator iter = p.rbegin(); </span><br><span class="line">		iter != p.rend(); iter++)</span><br><span class="line">	&#123;</span><br><span class="line">		if ((*iter).second != 0)</span><br><span class="line">		&#123;</span><br><span class="line">			printf(&quot; %d %.1lf&quot;, (*iter).first, (*iter).second);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </blockquote>
-<h2 id="想法"><a href="#想法" class="headerlink" title="想法"></a>想法</h2><p>本以为要用数组来解，但是想一想光搜索就容易爆时间，我又不想自己写一个二叉排序树的算法。</p>
-<p>这样一想，没有思路，我就去看题解了。</p>
-<p>发现 map 正好是一个映射关系，恰好符合这道题的要求。</p>
-<p>所以本题的解题思路就是，如果 first  对应的值存在就加上 second，对应的值不存在就存入，之后利用反向迭代器统计非零元个数，并输出结果。</p>
-<p>最后输出应当使用 printf ，使用 cout 会爆流。</p>
-<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;map&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> a_count, b_count;		 <span class="comment">//多项式非零元个数</span></span><br><span class="line">	<span class="built_in">map</span>&lt;<span class="keyword">int</span>, <span class="keyword">double</span>&gt; p;</span><br><span class="line">	</span><br><span class="line">	</span><br><span class="line">	<span class="built_in">cin</span> &gt;&gt; a_count;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; a_count; ++j)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">int</span> <span class="built_in">exp</span>;<span class="comment">//指数</span></span><br><span class="line">		<span class="keyword">double</span> coe;<span class="comment">//真数</span></span><br><span class="line">		<span class="built_in">cin</span> &gt;&gt; <span class="built_in">exp</span> &gt;&gt; coe;</span><br><span class="line">		<span class="comment">/*map.insert()函数在执行时,若const值已经存在,就不再执行插入操作*/</span></span><br><span class="line">		<span class="keyword">if</span> (!p.insert(make_pair(<span class="built_in">exp</span>, coe)).second )</span><br><span class="line">		&#123;</span><br><span class="line">			p[<span class="built_in">exp</span>] = p[<span class="built_in">exp</span>] + coe;</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	</span><br><span class="line">	<span class="built_in">cin</span> &gt;&gt; b_count;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; b_count; ++j)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">int</span> <span class="built_in">exp</span>;<span class="comment">//指数</span></span><br><span class="line">		<span class="keyword">double</span> coe;<span class="comment">//真数</span></span><br><span class="line">		<span class="built_in">cin</span> &gt;&gt; <span class="built_in">exp</span> &gt;&gt; coe;</span><br><span class="line">		<span class="keyword">if</span> (!p.insert(make_pair(<span class="built_in">exp</span>, coe)).second )</span><br><span class="line">		&#123;</span><br><span class="line">			p[<span class="built_in">exp</span>] = p[<span class="built_in">exp</span>] + coe;</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">int</span> total_count = <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">for</span> (<span class="built_in">map</span>&lt;<span class="keyword">int</span>, <span class="keyword">double</span>&gt;::reverse_iterator iter = p.rbegin();</span><br><span class="line">		iter != p.rend(); iter++)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">if</span> ((*iter).second != <span class="number">0</span>)</span><br><span class="line">		&#123;</span><br><span class="line">			total_count++;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	</span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; total_count;</span><br><span class="line">	<span class="keyword">for</span> (<span class="built_in">map</span>&lt;<span class="keyword">int</span>, <span class="keyword">double</span>&gt;::reverse_iterator iter = p.rbegin(); </span><br><span class="line">		iter != p.rend(); iter++)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">if</span> ((*iter).second != <span class="number">0</span>)</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="built_in">printf</span>(<span class="string">" %d %.1lf"</span>, (*iter).first, (*iter).second);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
 	
 	</div>
 	
@@ -413,32 +411,6 @@
 			
 					<li>
 						<div class="relate-post-text">
-							<a class="relate-post-title" href="/special-eureka/2019/07/22/中国直男和青年真可怜/" title="中国直男和青年真可怜">
-								中国直男和青年真可怜			
-							</a>
-							<p class="relate-post-date">
-								<i class="fa fa-calendar"></i>
-								七月 22日, 2019				
-							</p>
-							<p class="relate-post-content">
-								直男不是得癌就是被斩。
-青年不是被毁，就是被废。
-尾巴那我更可怜——我既是直男，又是青年。
-
-							</p>
-						</div>
-
-						<div class="relate-post-cover">
-							<a href="/special-eureka/2019/07/22/中国直男和青年真可怜/" title="中国直男和青年真可怜">				
-								
-								<img class="lazy" src="/img/placeholder.jpg" data-src="/img/cart_cover.jpg" alt="中国直男和青年真可怜"/>
-							</a>
-						</div>
-					</li>											
-			
-			
-					<li>
-						<div class="relate-post-text">
 							<a class="relate-post-title" href="/special-eureka/2019/07/21/PATEST-A1004-题解/" title="PATEST-A1004-题解">
 								PATEST-A1004-题解			
 							</a>
@@ -460,6 +432,83 @@
 							<a href="/special-eureka/2019/07/21/PATEST-A1004-题解/" title="PATEST-A1004-题解">				
 								
 								<img class="lazy" src="/img/placeholder.jpg" data-src="/img/cart_cover.jpg" alt="PATEST-A1004-题解"/>
+							</a>
+						</div>
+					</li>											
+			
+			
+					<li>
+						<div class="relate-post-text">
+							<a class="relate-post-title" href="/special-eureka/2019/07/13/PATEST-A1003-题解/" title="PATEST-A1003-题解">
+								PATEST-A1003-题解			
+							</a>
+							<p class="relate-post-date">
+								<i class="fa fa-calendar"></i>
+								七月 13日, 2019				
+							</p>
+							<p class="relate-post-content">
+								由于这道题对于我做 PAT 来说是第一次做带有算法的题，所以本次题解会多出来剖析，来分析局部代码和代码的整体思路，帮助自己能够更好的理解整道题，和迪杰斯特拉算法。
+做 PAT 第一次遇到算法题，又让我想起了去年夏天被算法题支配的恐怖。...
+							</p>
+						</div>
+
+						<div class="relate-post-cover">
+							<a href="/special-eureka/2019/07/13/PATEST-A1003-题解/" title="PATEST-A1003-题解">				
+								
+								<img class="lazy" src="/img/placeholder.jpg" data-src="/img/cart_cover.jpg" alt="PATEST-A1003-题解"/>
+							</a>
+						</div>
+					</li>											
+			
+			
+					<li>
+						<div class="relate-post-text">
+							<a class="relate-post-title" href="/special-eureka/2019/07/11/PATEST-A1001-题解/" title="PATEST A1001 题解">
+								PATEST A1001 题解			
+							</a>
+							<p class="relate-post-date">
+								<i class="fa fa-calendar"></i>
+								七月 11日, 2019				
+							</p>
+							<p class="relate-post-content">
+								被一道a+b题给卡住三个多小时，自己果然是个人才。
+
+
+题目
+1001 A+B FormatCalculate a+b and output the sum in standard format – that is, the digi...
+							</p>
+						</div>
+
+						<div class="relate-post-cover">
+							<a href="/special-eureka/2019/07/11/PATEST-A1001-题解/" title="PATEST A1001 题解">				
+								
+								<img class="lazy" src="/img/placeholder.jpg" data-src="/img/cart_cover.jpg" alt="PATEST A1001 题解"/>
+							</a>
+						</div>
+					</li>											
+			
+			
+					<li>
+						<div class="relate-post-text">
+							<a class="relate-post-title" href="/special-eureka/2019/07/22/中国直男和青年真可怜/" title="中国直男和青年真可怜">
+								中国直男和青年真可怜			
+							</a>
+							<p class="relate-post-date">
+								<i class="fa fa-calendar"></i>
+								七月 22日, 2019				
+							</p>
+							<p class="relate-post-content">
+								直男不是得癌就是被斩。
+青年不是被毁，就是被废。
+尾巴那我更可怜——我既是直男，又是青年。
+
+							</p>
+						</div>
+
+						<div class="relate-post-cover">
+							<a href="/special-eureka/2019/07/22/中国直男和青年真可怜/" title="中国直男和青年真可怜">				
+								
+								<img class="lazy" src="/img/placeholder.jpg" data-src="/img/cart_cover.jpg" alt="中国直男和青年真可怜"/>
 							</a>
 						</div>
 					</li>											
@@ -541,30 +590,6 @@
 			
 					<li>
 						<div class="relate-post-text">
-							<a class="relate-post-title" href="/special-eureka/2019/07/13/PATEST-A1003-题解/" title="PATEST-A1003-题解">
-								PATEST-A1003-题解			
-							</a>
-							<p class="relate-post-date">
-								<i class="fa fa-calendar"></i>
-								七月 13日, 2019				
-							</p>
-							<p class="relate-post-content">
-								由于这道题对于我做 PAT 来说是第一次做带有算法的题，所以本次题解会多出来剖析，来分析局部代码和代码的整体思路，帮助自己能够更好的理解整道题，和迪杰斯特拉算法。
-做 PAT 第一次遇到算法题，又让我想起了去年夏天被算法题支配的恐怖。...
-							</p>
-						</div>
-
-						<div class="relate-post-cover">
-							<a href="/special-eureka/2019/07/13/PATEST-A1003-题解/" title="PATEST-A1003-题解">				
-								
-								<img class="lazy" src="/img/placeholder.jpg" data-src="/img/cart_cover.jpg" alt="PATEST-A1003-题解"/>
-							</a>
-						</div>
-					</li>											
-			
-			
-					<li>
-						<div class="relate-post-text">
 							<a class="relate-post-title" href="/special-eureka/2019/07/11/map用法/" title="map用法">
 								map用法			
 							</a>
@@ -582,33 +607,6 @@ map 就我自己的理解，它实质上就是一种映射的关系，它有两�
 							<a href="/special-eureka/2019/07/11/map用法/" title="map用法">				
 								
 								<img class="lazy" src="/img/placeholder.jpg" data-src="/img/cart_cover.jpg" alt="map用法"/>
-							</a>
-						</div>
-					</li>											
-			
-			
-					<li>
-						<div class="relate-post-text">
-							<a class="relate-post-title" href="/special-eureka/2019/07/11/PATEST-A1001-题解/" title="PATEST A1001 题解">
-								PATEST A1001 题解			
-							</a>
-							<p class="relate-post-date">
-								<i class="fa fa-calendar"></i>
-								七月 11日, 2019				
-							</p>
-							<p class="relate-post-content">
-								被一道a+b题给卡住三个多小时，自己果然是个人才。
-
-
-题目
-1001 A+B FormatCalculate a+b and output the sum in standard format – that is, the digi...
-							</p>
-						</div>
-
-						<div class="relate-post-cover">
-							<a href="/special-eureka/2019/07/11/PATEST-A1001-题解/" title="PATEST A1001 题解">				
-								
-								<img class="lazy" src="/img/placeholder.jpg" data-src="/img/cart_cover.jpg" alt="PATEST A1001 题解"/>
 							</a>
 						</div>
 					</li>											
