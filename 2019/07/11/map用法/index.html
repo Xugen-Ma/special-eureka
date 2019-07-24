@@ -281,7 +281,7 @@
 
 	<a href="/special-eureka/2019/07/11/map用法/" itemprop="url">
 		<time datetime="2019-07-11T06:51:28.000Z" itemprop="dateUpdated">
-	  		2019-07-22
+	  		2019-07-24
 	  </time>
 	</a> 
 
@@ -311,7 +311,11 @@
 
 	<div class="article-content" id="article-content">
 		<h2 id="什么是-map"><a href="#什么是-map" class="headerlink" title="什么是 map"></a>什么是 map</h2><p><del>map 很多人说是一种关联容器，又提什么 stl 一堆的东西</del></p>
-<p>map 就我自己的理解，它实质上就是一种映射的关系，它有两个值，key，value，建立的关系是 key -&gt; value的映射。所以，通过映射的定义我们就可以知道，key 在整个 map 中是唯一的。</p>
+<ul>
+<li>是一种映射的关系，它有两个值，key，value，建立的关系是 key -&gt; value的映射。</li>
+<li><code>key</code>在整个 <code>map</code> 中是唯一的。</li>
+<li>map 以<code>key</code>有序。</li>
+</ul>
 <h2 id="使用之前"><a href="#使用之前" class="headerlink" title="使用之前"></a>使用之前</h2><p>在 cpp 中使用 map 的时候必须包含<code>#include &lt;map&gt;</code>  这个语句</p>
 <h2 id="定义一个map变量"><a href="#定义一个map变量" class="headerlink" title="定义一个map变量"></a>定义一个map变量</h2><p><code>map&lt;key_type, value_type&gt; name;</code></p>
 <blockquote>
@@ -328,7 +332,12 @@
 <p>我所理解的迭代器是一种特殊的指针。</p>
 </blockquote>
 <p><code>for (map&lt;int, double&gt;::reverse_iterator iter = p.rbegin(); 
-        iter != p.rend(); iter++)</code><br>这样就可以直接从 map 的尾部开始查询</p>
+        iter != p.rend(); iter++)</code><br>这样就可以直接从 map 的尾部开始查询。</p>
+<h2 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h2><ul>
+<li>使用迭代器<code>iter</code>访问<code>first</code> <code>second</code>的元素时，需要以<code>(*(iter)).first</code> 的形式访问。</li>
+<li><code>p.end();</code>指向的是 <code>map</code>的最后内存单元，而不是最后一个元素。</li>
+<li>访问<code>p</code>的最后一个元素时，需要使用反向迭代器<code>reverse_iterator</code>。</li>
+</ul>
 	
 	</div>
 	
