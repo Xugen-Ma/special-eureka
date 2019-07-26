@@ -407,14 +407,13 @@ map 的使用增
 
 				<div class="post-content">
 					
-						题目
- 1002 A+B for Polynomials
- This time, you are supposed to find A+B where A and B are two polynomials.
-
-Input Specification:*
-Each input file contains one test case. Each case occupies 2 lines, and each line contains the information of a polynomial:
-K N1 aN1 ……Nk aNk
-where K is the number of no...
+						题目多项式加法。
+想法本以为要用数组来解，但是想一想光搜索就容易爆时间，我又不想自己写一个二叉排序树的算法。
+这样一想，没有思路，我就去看题解了。
+发现 map 正好是一个映射关系，恰好符合这道题的要求。
+所以本题的解题思路就是，如果 first  对应的值存在就加上 second，对应的值不存在就存入，之后利用反向迭代器统计非零元个数，并输出结果。
+最后输出应当使用 printf ，使用 cout 会爆流。
+代码1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484...
 					
 				</div>
 				
