@@ -13,7 +13,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
   <title>
     
-      PATEST-A1002-题解 | Xugen-Ma
+      PATEST-A1013 题解 | Xugen-Ma
     
   </title>
   <meta name="author" content="Xuegen">
@@ -160,7 +160,7 @@
 	<!-- Page title -->
 	<p>
 		
-			当前文章&nbsp;:&nbsp;《PATEST-A1002-题解》
+			当前文章&nbsp;:&nbsp;《PATEST-A1013 题解》
 		
 	</p>
 
@@ -247,8 +247,8 @@
 	<div class="article-title">
 		<i class="fa fa-paper-plane-o" aria-hidden="true"></i>
 		
-	<a href="/special-eureka/2019/07/11/PATEST-A1002-题解/" itemprop="url">
-		PATEST-A1002-题解
+	<a href="/special-eureka/2019/07/30/PATEST-A1013-题解/" itemprop="url">
+		PATEST-A1013 题解
 	</a>
 
 	</div>
@@ -261,9 +261,9 @@
 
 	发布于
 
-	<a href="/special-eureka/2019/07/11/PATEST-A1002-题解/" itemprop="url">
-		<time datetime="2019-07-11T06:23:27.000Z" itemprop="datePublished">
-	  		2019-07-11
+	<a href="/special-eureka/2019/07/30/PATEST-A1013-题解/" itemprop="url">
+		<time datetime="2019-07-30T08:21:32.000Z" itemprop="datePublished">
+	  		2019-07-30
 	  </time>
 	</a>
 	&nbsp;
@@ -279,9 +279,9 @@
 
 	更新于
 
-	<a href="/special-eureka/2019/07/11/PATEST-A1002-题解/" itemprop="url">
-		<time datetime="2019-07-11T06:23:27.000Z" itemprop="dateUpdated">
-	  		2019-07-26
+	<a href="/special-eureka/2019/07/30/PATEST-A1013-题解/" itemprop="url">
+		<time datetime="2019-07-30T08:21:32.000Z" itemprop="dateUpdated">
+	  		2019-07-30
 	  </time>
 	</a> 
 
@@ -300,6 +300,14 @@
 			题解
 		</a>
 	
+		<a href="/special-eureka/tags/dfs/" class=" ">
+			dfs
+		</a>
+	
+		<a href="/special-eureka/tags/图论/" class=" ">
+			图论
+		</a>
+	
 		
 		</span>
 		
@@ -310,15 +318,15 @@
 	</div>
 
 	<div class="article-content" id="article-content">
-		<h2 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h2><p>多项式加法。</p>
-<h2 id="想法"><a href="#想法" class="headerlink" title="想法"></a>想法</h2><p>本以为要用数组来解，但是想一想光搜索就容易爆时间，我又不想自己写一个二叉排序树的算法。</p>
-<p>这样一想，没有思路，我就去看题解了。</p>
-<p>发现 map 正好是一个映射关系，恰好符合这道题的要求。</p>
-<p>所以本题的解题思路就是，如果 first  对应的值存在就加上 second，对应的值不存在就存入，之后利用反向迭代器统计非零元个数，并输出结果。</p>
-<p>最后输出应当使用 printf ，使用 cout 会爆流。</p>
-<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;map&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> a_count, b_count;		 <span class="comment">//多项式非零元个数</span></span><br><span class="line">	<span class="built_in">map</span>&lt;<span class="keyword">int</span>, <span class="keyword">double</span>&gt; p;</span><br><span class="line">	</span><br><span class="line">	</span><br><span class="line">	<span class="built_in">cin</span> &gt;&gt; a_count;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; a_count; ++j)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">int</span> <span class="built_in">exp</span>;<span class="comment">//指数</span></span><br><span class="line">		<span class="keyword">double</span> coe;<span class="comment">//真数</span></span><br><span class="line">		<span class="built_in">cin</span> &gt;&gt; <span class="built_in">exp</span> &gt;&gt; coe;</span><br><span class="line">		<span class="comment">/*map.insert()函数在执行时,若const值已经存在,就不再执行插入操作*/</span></span><br><span class="line">		<span class="keyword">if</span> (!p.insert(make_pair(<span class="built_in">exp</span>, coe)).second )</span><br><span class="line">		&#123;</span><br><span class="line">			p[<span class="built_in">exp</span>] = p[<span class="built_in">exp</span>] + coe;</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	</span><br><span class="line">	<span class="built_in">cin</span> &gt;&gt; b_count;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; b_count; ++j)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">int</span> <span class="built_in">exp</span>;<span class="comment">//指数</span></span><br><span class="line">		<span class="keyword">double</span> coe;<span class="comment">//真数</span></span><br><span class="line">		<span class="built_in">cin</span> &gt;&gt; <span class="built_in">exp</span> &gt;&gt; coe;</span><br><span class="line">		<span class="keyword">if</span> (!p.insert(make_pair(<span class="built_in">exp</span>, coe)).second )</span><br><span class="line">		&#123;</span><br><span class="line">			p[<span class="built_in">exp</span>] = p[<span class="built_in">exp</span>] + coe;</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">int</span> total_count = <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">for</span> (<span class="built_in">map</span>&lt;<span class="keyword">int</span>, <span class="keyword">double</span>&gt;::reverse_iterator iter = p.rbegin();</span><br><span class="line">		iter != p.rend(); iter++)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">if</span> ((*iter).second != <span class="number">0</span>)</span><br><span class="line">		&#123;</span><br><span class="line">			total_count++;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	</span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; total_count;</span><br><span class="line">	<span class="keyword">for</span> (<span class="built_in">map</span>&lt;<span class="keyword">int</span>, <span class="keyword">double</span>&gt;::reverse_iterator iter = p.rbegin(); </span><br><span class="line">		iter != p.rend(); iter++)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">if</span> ((*iter).second != <span class="number">0</span>)</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="built_in">printf</span>(<span class="string">" %d %.1lf"</span>, (*iter).first, (*iter).second);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+		<h1 id="START"><a href="#START" class="headerlink" title="START:"></a>START:</h1><blockquote>
+<p>太依赖vs了，结果没发现vs不支持对全局变量的检查，然后我函数里用的局部变量和全局变量名字重了，程序一直出错，我愣生生看了两个小时。</p>
+</blockquote>
+<h2 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h2><p>给一个图的邻接矩阵，并拿掉其中的一些点，求需要几条路，将其子图变成一个连通图。</p>
+<h2 id="想法"><a href="#想法" class="headerlink" title="想法"></a>想法</h2><p>实质上不难，DFS 的循环每结束一次，就是寻找到一个通路——也就是一个连通块。用一个<code>for</code>循环遍历所有的顶点就 ok 了，而需要的路的数量就相当于连通块的个数 - 1。</p>
+<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">int</span> n, m, k;<span class="comment">//城市总数，剩余高速路数，关注的城市数</span></span><br><span class="line"><span class="keyword">int</span> occ_city[<span class="number">2001</span>];</span><br><span class="line"><span class="keyword">bool</span> vis[<span class="number">2001</span>];</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> <span class="built_in">map</span>[<span class="number">1000</span>][<span class="number">1000</span>];</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">dfs</span><span class="params">(<span class="keyword">int</span> u, <span class="keyword">int</span> p)</span> </span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	vis[u] = <span class="literal">true</span>;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">if</span> (i != p &amp;&amp; vis[i]==<span class="literal">false</span> &amp;&amp; <span class="built_in">map</span>[u][i] != <span class="number">0</span>)</span><br><span class="line">			dfs(i, p);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="built_in">memset</span>(vis, <span class="literal">false</span>, <span class="keyword">sizeof</span>(vis));</span><br><span class="line">	<span class="built_in">memset</span>(<span class="built_in">map</span>, <span class="number">0</span>, <span class="keyword">sizeof</span>(<span class="built_in">map</span>));</span><br><span class="line">	<span class="built_in">cin</span> &gt;&gt; n &gt;&gt; m &gt;&gt; k;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; m; i++)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">int</span> u, v;</span><br><span class="line">		<span class="built_in">cin</span> &gt;&gt; u &gt;&gt; v;</span><br><span class="line">		<span class="built_in">map</span>[u][v] = <span class="number">1</span>;</span><br><span class="line">		<span class="built_in">map</span>[v][u] = <span class="number">1</span>;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; k; i++)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="built_in">memset</span>(vis, <span class="number">0</span>, <span class="keyword">sizeof</span>(vis));</span><br><span class="line">		<span class="keyword">int</span> _cnt = <span class="number">0</span>,los;</span><br><span class="line">		<span class="built_in">cin</span> &gt;&gt; los;</span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">1</span>; j &lt;= n; j++)</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="keyword">if</span> (j != los &amp;&amp; vis[j] == <span class="literal">false</span>)</span><br><span class="line">			&#123;</span><br><span class="line">				_cnt++;</span><br><span class="line">				dfs(j, los);</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		<span class="built_in">cout</span> &lt;&lt; _cnt<span class="number">-1</span>&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-	
+<h2 id="思考"><a href="#思考" class="headerlink" title="思考"></a>思考</h2><p>在 DFS 函数的定义上，我将其定义为<code>void dfs(int n, int p)</code>而这与上面的全局变量<code>int n</code>重了，所以一直报错，让我差点崩了。（辣鸡<code>vs</code>不支持对全局变量检查，这一定不是我的问题！）</p>
+<h1 id="END"><a href="#END" class="headerlink" title="END"></a>END</h1>	
 	</div>
 	
 	<div id="current-post-cover" data-scr="/special-eureka/img/cart_cover.jpg"></div>
@@ -336,12 +344,8 @@
 	<span>
 		<a href="javascript: window.scrollTo(0, 0);">返回顶部</a>
 		
-			<a href="/special-eureka/2019/07/11/map用法/" title="map用法" rel="prev">
-				&laquo;上一篇
-			</a>
 		
-		
-			<a href="/special-eureka/2019/07/11/PATEST-A1001-题解/" title="PATEST A1001 题解" rel="next">
+			<a href="/special-eureka/2019/07/28/名钻夏日赌场 -- 一个没有人能够择的清的地方/" title="名钻夏日赌场 -- 一个没有人能够择的清的地方" rel="next">
 				下一篇&raquo;
 			</a>
 			
