@@ -13,7 +13,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
   <title>
     
-      PATEST-A1004-题解 | Xugen-Ma
+      强制类型转换 | Xugen-Ma
     
   </title>
   <meta name="author" content="Xuegen">
@@ -160,7 +160,7 @@
 	<!-- Page title -->
 	<p>
 		
-			当前文章&nbsp;:&nbsp;《PATEST-A1004-题解》
+			当前文章&nbsp;:&nbsp;《强制类型转换》
 		
 	</p>
 
@@ -247,8 +247,8 @@
 	<div class="article-title">
 		<i class="fa fa-paper-plane-o" aria-hidden="true"></i>
 		
-	<a href="/special-eureka/2019/07/21/PATEST-A1004-题解/" itemprop="url">
-		PATEST-A1004-题解
+	<a href="/special-eureka/2019/08/01/强制类型转换/" itemprop="url">
+		强制类型转换
 	</a>
 
 	</div>
@@ -261,9 +261,9 @@
 
 	发布于
 
-	<a href="/special-eureka/2019/07/21/PATEST-A1004-题解/" itemprop="url">
-		<time datetime="2019-07-21T09:50:16.000Z" itemprop="datePublished">
-	  		2019-07-21
+	<a href="/special-eureka/2019/08/01/强制类型转换/" itemprop="url">
+		<time datetime="2019-08-01T11:57:13.000Z" itemprop="datePublished">
+	  		2019-08-01
 	  </time>
 	</a>
 	&nbsp;
@@ -279,9 +279,9 @@
 
 	更新于
 
-	<a href="/special-eureka/2019/07/21/PATEST-A1004-题解/" itemprop="url">
-		<time datetime="2019-07-21T09:50:16.000Z" itemprop="dateUpdated">
-	  		2019-07-22
+	<a href="/special-eureka/2019/08/01/强制类型转换/" itemprop="url">
+		<time datetime="2019-08-01T11:57:13.000Z" itemprop="dateUpdated">
+	  		2019-08-01
 	  </time>
 	</a> 
 
@@ -292,28 +292,12 @@
 			<i class="fa fa-tags"></i>
 			
 	
-		<a href="/special-eureka/tags/题解/" class=" ">
-			题解
+		<a href="/special-eureka/tags/语言/" class=" ">
+			语言
 		</a>
 	
-		<a href="/special-eureka/tags/PAT/" class=" ">
-			PAT
-		</a>
-	
-		<a href="/special-eureka/tags/树的遍历/" class=" ">
-			树的遍历
-		</a>
-	
-		<a href="/special-eureka/tags/广度优先搜索/" class=" ">
-			广度优先搜索
-		</a>
-	
-		<a href="/special-eureka/tags/树/" class=" ">
-			树
-		</a>
-	
-		<a href="/special-eureka/tags/层序遍历/" class=" ">
-			层序遍历
+		<a href="/special-eureka/tags/类型转换/" class=" ">
+			类型转换
 		</a>
 	
 		
@@ -326,14 +310,15 @@
 	</div>
 
 	<div class="article-content" id="article-content">
-		<h1 id="START"><a href="#START" class="headerlink" title="START:"></a>START:</h1><p><del>我从来不会咕咕咕的。</del></p>
-<h2 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h2><blockquote>
-<p>题意是输出二叉树的每一层叶节点的个数。</p>
+		<h1 id="START"><a href="#START" class="headerlink" title="START:"></a>START:</h1><blockquote>
+<p>写题遇见类型转换又草了，只能写篇博来记录下。</p>
 </blockquote>
-<h2 id="解法"><a href="#解法" class="headerlink" title="解法"></a>解法</h2><p>bfs + 队列实现层序遍历。</p>
-<h2 id="源码"><a href="#源码" class="headerlink" title="源码"></a>源码</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">	几乎没有过几个测试点的代码我就敢放上来，</span></span><br><span class="line"><span class="comment">	真的是佩服我的勇气呢!</span></span><br><span class="line"><span class="comment">	未 AC 代码</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;queue&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;vector&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> N;<span class="comment">//树的节点数</span></span><br><span class="line"><span class="keyword">int</span> M;<span class="comment">//树的非叶子节点树</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&gt; ID;</span><br><span class="line"><span class="built_in">vector</span> &lt;<span class="keyword">int</span>&gt; v;</span><br><span class="line"><span class="built_in">queue</span>&lt;<span class="keyword">int</span>&gt; q;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">100</span>; i++)</span><br><span class="line">	&#123;</span><br><span class="line">		ID.push_back(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;());</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">cin</span> &gt;&gt; N &gt;&gt; M;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; M; i++)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">int</span>  id, k;</span><br><span class="line">		<span class="built_in">cin</span> &gt;&gt; id;</span><br><span class="line">		<span class="built_in">cin</span> &gt;&gt; k;<span class="comment">//有几个子节点</span></span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; k; j++)</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="keyword">int</span> id2;</span><br><span class="line">			<span class="built_in">cin</span> &gt;&gt; id2;</span><br><span class="line">			ID[id].push_back(id2);</span><br><span class="line"></span><br><span class="line">		&#125;<span class="comment">//end for j</span></span><br><span class="line"></span><br><span class="line">	&#125;<span class="comment">//end for i</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">	q.push(<span class="number">1</span>);</span><br><span class="line">	<span class="keyword">while</span> (!q.empty())</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">int</span> size = q.size();</span><br><span class="line">		<span class="keyword">int</span> count;</span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; size; i++)</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="keyword">int</span> top = q.front();</span><br><span class="line">			q.pop();</span><br><span class="line">			<span class="keyword">if</span> (ID[top].size() == <span class="number">0</span>)<span class="comment">//无孩子，叶子节点</span></span><br><span class="line">			&#123;</span><br><span class="line">				count++;</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="keyword">else</span></span><br><span class="line">			&#123;</span><br><span class="line">				<span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; ID[top].size(); j++)</span><br><span class="line">				&#123;</span><br><span class="line">					q.push(ID[top][j]);</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br><span class="line">			v.push_back(count);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; v[<span class="number">0</span>];</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; v.size(); i++)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="built_in">cout</span> &lt;&lt; <span class="string">" "</span> &lt;&lt; v[i];</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="cpp"><a href="#cpp" class="headerlink" title="cpp"></a>cpp</h2><h3 id="int-to-string-n"><a href="#int-to-string-n" class="headerlink" title="int to string[^n]"></a>int to string[^n]</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;sstream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;string&gt;</span></span></span><br><span class="line">···</span><br><span class="line">Stringstream stream;</span><br><span class="line">sring s;</span><br><span class="line"><span class="keyword">int</span> n;</span><br><span class="line">stream &lt;&lt; n;</span><br><span class="line">stream &gt;&gt; s;</span><br></pre></td></tr></table></figure>
 
-<h2 id="吐槽"><a href="#吐槽" class="headerlink" title="吐槽"></a>吐槽</h2><p>二维 vector 数组最好固定行，不然每一次用之前都需要往里头传一个一维 vector 数组，不然会越界。</p>
+<h4 id="警告"><a href="#警告" class="headerlink" title="警告"></a>警告</h4><p>复用要调用<code>stream.clear();</code>。</p>
+<h3 id="string-to-int-n"><a href="#string-to-int-n" class="headerlink" title="string to int[^n]"></a>string to int[^n]</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;sstream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="built_in">stringstream</span> ss;</span><br><span class="line">	<span class="built_in">string</span> s=<span class="string">"55"</span>;</span><br><span class="line">	<span class="built_in">string</span> s2=<span class="string">"666"</span>; </span><br><span class="line">	<span class="keyword">int</span> x;</span><br><span class="line">	ss&lt;&lt;s;</span><br><span class="line">	ss&gt;&gt;x;            <span class="comment">//x为55</span></span><br><span class="line">	<span class="built_in">cout</span>&lt;&lt;x&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">	ss.clear();</span><br><span class="line">	ss&lt;&lt;s2;</span><br><span class="line">	ss&gt;&gt;x;            <span class="comment">//x为666</span></span><br><span class="line">	<span class="built_in">cout</span>&lt;&lt;x&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="引用"><a href="#引用" class="headerlink" title="引用"></a>引用</h2><p>[^n]: <a href="https://www.cnblogs.com/smile233/p/8379802.html" target="_blank" rel="noopener">C++ int与string的相互转换(含源码实现)</a><br>[^n]:<a href="https://blog.csdn.net/cqhblg/article/details/85867234" target="_blank" rel="noopener">c++下string转int</a></p>
 <h1 id="END"><a href="#END" class="headerlink" title="END"></a>END</h1>	
 	</div>
 	
@@ -352,12 +337,12 @@
 	<span>
 		<a href="javascript: window.scrollTo(0, 0);">返回顶部</a>
 		
-			<a href="/special-eureka/2019/07/22/中国直男和青年真可怜/" title="中国直男和青年真可怜" rel="prev">
+			<a href="/special-eureka/2019/08/01/进制转化/" title="进制转化" rel="prev">
 				&laquo;上一篇
 			</a>
 		
 		
-			<a href="/special-eureka/2019/07/17/新买的掌托/" title="新买的掌托" rel="next">
+			<a href="/special-eureka/2019/08/01/素数筛/" title="素数筛" rel="next">
 				下一篇&raquo;
 			</a>
 			
