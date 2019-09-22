@@ -1,0 +1,713 @@
+<!--
+	作者：Sariay
+	时间：2018-09-25
+	描述：There may be a bug, but don't worry, QiLing(器灵) says that it can work normally!
+-->
+<!DOCTYPE html>
+<html class="html-loading">
+		
+
+<head><meta name="generator" content="Hexo 3.9.0">
+	<meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
+  <title>
+    
+      计算机网络-物理层 | Xugen-Ma
+    
+  </title>
+  <meta name="author" content="Xuegen">
+  <meta name="keywords" content>
+  <meta name="description" content="Stay simple, Stay naive">
+	<!-- favicon -->
+  <link rel="shortcut icon" href="/special-eureka/img/favicon.ico">
+
+  <!-- css -->
+  <link rel="stylesheet" href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="/special-eureka/css/Annie.css">
+  
+  <!-- jquery -->
+	<script src="/special-eureka/js/jquery.min.js"></script>
+
+  <!-- leancloud -->
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
+<script src="/special-eureka/js/leancloud.js"></script>
+</head>
+	<body>
+		<!-- Preloader -->
+
+	<div id="preloader">
+		<div class="pre-container">
+			
+				<div class="spinner">
+					<div class="double-bounce1"></div>
+					<div class="double-bounce2"></div>
+				</div>
+						
+		</div>
+	</div>
+
+
+<!-- header -->
+<header class="fixbackground" data-img-mode="normal" data-normal-src="/special-eureka/img/1.jpg" data-random-max="110" data-random-src="https://sariay.github.io/Random-img/">
+	<div class="mask">
+		<!-- Logo and navigation -->
+		<div class="h-header">
+			<div id="logo">
+				<a href="/">
+						
+						<img src="/special-eureka/img/logo.png" alt="Logo">
+					
+				</a>
+			</div>
+			
+			<div id="navigation-show">
+				<ul>
+	
+		<li class="menu-home">
+			<a href="/special-eureka/" class="menu-item-home">主页</a>
+		</li>
+	
+		<li class="menu-archive">
+			<a href="/special-eureka/archives" class="menu-item-archive">归档</a>
+		</li>
+	
+		<li class="menu-categories">
+			<a href="/special-eureka/categories" class="menu-item-categories">分类</a>
+		</li>
+	
+		<li class="menu-tags">
+			<a href="/special-eureka/tags" class="menu-item-tags">标签</a>
+		</li>
+	
+		<li class="menu-about">
+			<a href="/special-eureka/about" class="menu-item-about">关于</a>
+		</li>
+	
+		<li class="menu-gallery">
+			<a href="/special-eureka/gallery" class="menu-item-gallery">相册</a>
+		</li>
+	
+
+	
+</ul>
+			</div>				
+		</div>
+
+		<!-- motto -->
+		<div class="h-body">	
+			
+				<p class="motto"></p>
+			
+		</div>
+		
+		<!-- others: such as time... -->			
+		<div class="h-footer">
+			<a href="javascript:;" id="read-more"><i class="fa fa-angle-double-down" aria-hidden="true"></i>
+			</a>
+
+			
+				<!-- 
+	This is only a demo, please go to "https://time.is" to set your city time! 
+-->
+<style type="text/css">
+	.header-date {
+		font-size: 1.6rem;
+		color: #fff;
+		position: absolute;
+		bottom: 5px;
+		right: 1rem;
+		writing-mode: tb-rl;
+	}	
+	
+	.header-date a {
+		border-bottom: none;
+	}
+
+	@media only screen and (max-width: 768 ) {
+		.header-date {
+			font-size: 1rem;
+		}			
+	}
+</style>
+<div class="header-date">
+	<a href="https://time.is/Beijing" id="time_is_link" rel="nofollow" ></a>
+	<span id="Beijing_z43d"></span>
+</div>
+<script src="//widget.time.is/zh.js"></script>
+<script>
+	time_is_widget.init({
+		Beijing_z43d:{
+			template:"DATE", 
+			date_format:"year年 monthname dnum日"
+		}
+	});
+</script>
+			
+		</div>
+	</div>
+</header>
+
+<div id="navigation-hide">
+	<!-- Progress bar -->
+	<div id="progress-bar"></div>
+
+	<!-- Progress percent -->
+	<div id="progress-percentage"><h1>0.0%</h1></div>
+
+	<div class="toc-switch"><span class="switch-button">目录</span></div>
+
+	<!-- Page title -->
+	<p>
+		
+			当前文章&nbsp;:&nbsp;《计算机网络-物理层》
+		
+	</p>
+
+	<!-- Nav trigger for navigation-H-->
+	<a class="nav-trigger"><span></span></a>
+</div>
+
+<!-- Navigation in div(id="navigation-H") -->
+<nav class="nav-container" id="cd-nav">
+	<div class="nav-header">
+		<h3>Navigation</h3>
+		<a href="javascript:;" class="nav-close"></a>
+	</div>
+	<div class="nav-body">
+		<ul>
+	
+		<li class="menu-home">
+			<a href="/special-eureka/" class="menu-item-home">主页</a>
+		</li>
+	
+		<li class="menu-archive">
+			<a href="/special-eureka/archives" class="menu-item-archive">归档</a>
+		</li>
+	
+		<li class="menu-categories">
+			<a href="/special-eureka/categories" class="menu-item-categories">分类</a>
+		</li>
+	
+		<li class="menu-tags">
+			<a href="/special-eureka/tags" class="menu-item-tags">标签</a>
+		</li>
+	
+		<li class="menu-about">
+			<a href="/special-eureka/about" class="menu-item-about">关于</a>
+		</li>
+	
+		<li class="menu-gallery">
+			<a href="/special-eureka/gallery" class="menu-item-gallery">相册</a>
+		</li>
+	
+
+	
+</ul>
+	</div>
+	<div class="nav-footer">
+		<ul>
+	
+		<li>
+			<a href="https://github.com/Xugen-Ma" target="_blank">
+				<i class="fa fa-github"></i>
+			</a>
+		</li>
+			
+</ul>
+
+	</div>
+</nav>
+			
+		<!--main-->
+		<main>
+			<!--
+	时间：2018-11-17
+	描述：
+		插件名称：katelog.min.js
+		插件作者：KELEN
+		插件来源: https://github.com/KELEN/katelog
+-->
+
+	
+		<div class="layout-toc">
+			<div id="layout-toc">
+				<div class="k-catelog-list" id="catelog-list" data-title="文章目录"></div>
+			</div>
+		</div>
+
+		
+		<script src="/special-eureka/plugin/toc/katelog.min.js"></script>
+
+		
+	 
+
+<div class="layout-post">
+	<div id="layout-post">
+	<div class="article-title">
+		<i class="fa fa-paper-plane-o" aria-hidden="true"></i>
+		
+	<a href="/special-eureka/2019/09/19/计算机网络-物理层/" itemprop="url">
+		计算机网络-物理层
+	</a>
+
+	</div>
+
+	<div class="article-meta">
+		<span>
+			<i class="fa fa-calendar"></i>
+			
+
+
+	发布于
+
+	<a href="/special-eureka/2019/09/19/计算机网络-物理层/" itemprop="url">
+		<time datetime="2019-09-19T05:45:42.000Z" itemprop="datePublished">
+	  		2019-09-19
+	  </time>
+	</a>
+	&nbsp;
+
+
+
+
+
+			
+
+
+
+
+	更新于
+
+	<a href="/special-eureka/2019/09/19/计算机网络-物理层/" itemprop="url">
+		<time datetime="2019-09-19T05:45:42.000Z" itemprop="dateUpdated">
+	  		2019-09-19
+	  </time>
+	</a> 
+
+
+
+		</span>
+		<span>
+			<i class="fa fa-tags"></i>
+			
+	
+		<a href="/special-eureka/tags/计算机网络/" class=" ">
+			计算机网络
+		</a>
+	
+		
+		</span>
+		
+		
+
+
+
+	</div>
+
+	<div class="article-content" id="article-content">
+		<h2 id="物理层的基本概念"><a href="#物理层的基本概念" class="headerlink" title="物理层的基本概念"></a>物理层的基本概念</h2><ul>
+<li>物理层考虑的是传输比特流，而不是指具体的传输媒体。</li>
+<li>物理层的作用是要尽可能地屏蔽掉不同传输媒体和通信手段的差异，提供一个黑箱。</li>
+<li>用于物理层的协议常称为物理层的规程。</li>
+</ul>
+<p>物理层的主要任务：</p>
+<p>确定与传输媒体的接口的一些特性。</p>
+<table>
+<thead>
+<tr>
+<th>特性</th>
+<th>任务</th>
+<th>对应协议三要素</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>机械</td>
+<td>接口的规格</td>
+<td>无</td>
+</tr>
+<tr>
+<td>电气</td>
+<td>引脚的电压范围</td>
+<td>语法</td>
+</tr>
+<tr>
+<td>功能</td>
+<td>引脚电压表现含义</td>
+<td>语义</td>
+</tr>
+<tr>
+<td>过程</td>
+<td>可能时间出现的顺序</td>
+<td>同步</td>
+</tr>
+</tbody></table>
+<h2 id="信道的极限容量"><a href="#信道的极限容量" class="headerlink" title="信道的极限容量"></a>信道的极限容量</h2><h3 id="信道能够通过的频率范围"><a href="#信道能够通过的频率范围" class="headerlink" title="信道能够通过的频率范围"></a>信道能够通过的频率范围</h3><blockquote>
+<p>具体的信道所能通过的频率范围总是有限的。</p>
+<p>信道中许多高频成分往往不能通过信道。</p>
+</blockquote>
+<p>奈氏准则给定了在假定的理想条件下，为了避免码间串扰，码元的传输速率的上限值。</p>
+<p>奈氏准则前提：无噪声，理想。</p>
+<p>码元速率的极限值<code>B</code>与信道带宽<code>W</code>的关系。</p>
+<p>理想状态下，最高码元传输速率为 <code>2W Baud</code>。</p>
+<p>理想带通信道的最高码元传输速率为<code>1W Baud</code>。</p>
+<p><code>Baud</code>是码元传输速率的单位，换算关系为：</p>
+<p><code>1 Baud = 1码元/秒</code>。</p>
+<p>公式为：$$C=2 \times W \times \log_2N$$</p>
+<p>$C$ 是信道的极限信息传输速率，单位<code>bps</code>。<br>$N​$ 是携带数据的码元，可能取的离散值个数。</p>
+<p><strong>在任何信道中，码元传输的速率是有上限的，传输速率超过此上限，就会出现严重的码间串扰的问题，使接收端对码元的判决(即识别)称为了不可能。</strong></p>
+<h3 id="信噪比"><a href="#信噪比" class="headerlink" title="信噪比"></a>信噪比</h3><p>噪声存在于所有的电子设备和通信信道中。<br>由于噪声是随机产生的，它的瞬时值有时会很大。<br>因此噪声会使接收端对码元的判决产生错误(1判决为0或0判决为1)。<br>噪声的影响是相对的，如果信号相对较强，那么噪声的影响就相对较小。因此，信噪比很重要。</p>
+<ul>
+<li><strong>信噪比：</strong>就是信号的平均功率和噪声的平均功率之比，常记为S/N，并用分贝(dB)作为度量单位。</li>
+<li>*<em>公式：信噪比(dB) = *</em>$10 \times \log _{10}(S/N )$dB</li>
+<li><strong>例子：</strong>当S/N=10时，信噪比为10dB，而当S/N=1000时，信噪比为30dB。</li>
+<li>香农公式指出了信息传输速率的上限。<br>公式： $C= W \times \log _{2}(1+S/N)$<br>注： $C$  是信道的极限信息传输速率，单位bit/s。<br>  $W$ 为信道带宽（Hz）。<br>  $S$ 为信道内所传信号的平均功率。<br>  $N$ 为信道内部的高斯噪声功率。<br>注：香农公式表明，信道的带宽或信道中的信噪比越大，信息的极限传输速率就越高。</li>
+</ul>
+<h3 id="结论"><a href="#结论" class="headerlink" title="结论"></a>结论</h3><p><strong>数字信号通过实际信道，当码元传输的速率越高，或信号传输的距离越远，或噪声干扰越大，或传输媒体直流越差，在接收端的波形的失真就越严重。</strong></p>
+<blockquote>
+<p>课后探究问题：</p>
+<p>光纤能不能同时传输多路信号？</p>
+<p>自由空间有很多电磁波，为什么能正常通信？</p>
+</blockquote>
+<ol>
+<li>可以，并且发展出光复用技术，主要包括：<ol>
+<li>时分复用：就是循环节，循环节中特定的单元放特定连接的分组。但是在速率高的地方没法用。</li>
+<li>空分复用：在某些地方，有现成的光纤通信网管道，并且还有空余的位置。所以为了增加容量，可以在管道中拉入更多光纤。</li>
+<li>波分复用：一根光纤上承载多个波长（信道）系统，将一根光纤转换为多条＂虚拟＂纤，每条虚拟纤独立工作在不同波长上。[^1]</li>
+</ol>
+</li>
+<li>无线电是一种空间内自由传播的电磁波，无线电技术以导体中电流发生强弱变化时产生的无线电波作为载体，信息调制应用其中，承载着信息的电磁波在空间中进行传输，并到达无线电广播终端设备，电波在这时发生了磁场变化，由于导体中有电流,需要使用解调方式将数据信息提取出来。有干扰，但是规定信道必须有一定宽度的频率间隔，人们采取了很多方法，包括法律法规来规范无线电的使用，才使得干扰变少。</li>
+</ol>
+<p>[^1]:<a href="https://yq.aliyun.com/articles/451272" target="_blank" rel="noopener">光网络中三种复用技术</a></p>
+	
+	</div>
+	
+	<div id="current-post-cover" data-scr="/special-eureka/img/cart_cover.jpg"></div>
+
+	<!-- relate post, comment...-->
+	<div class="investment-container">
+		<div class="investment-header">
+			<div class="investment-title-1">
+				<div class="on">相关文章</div>
+				<div>评论</div>
+				<div>分享</div>
+			</div>
+			<div class="investment-title-2">	            
+				
+	<span>
+		<a href="javascript: window.scrollTo(0, 0);">返回顶部</a>
+		
+			<a href="/special-eureka/2019/09/22/40行代码获得百词斩实体书的单词次序/" title="40行代码获得百词斩实体书的单词次序" rel="prev">
+				&laquo;上一篇
+			</a>
+		
+		
+			<a href="/special-eureka/2019/09/16/第二章习题/" title="第二章习题" rel="next">
+				下一篇&raquo;
+			</a>
+			
+	</span>
+
+
+      		
+			</div>	
+		</div>
+		
+		<div class="investment-content">
+			<div class="investment-content-list">
+				
+
+<div class="relate-post">
+	
+		<div>Please check the post_relate setting in config.yml of hexo-theme-Annie! You should make sure 'postsEnable == true' and the number of site posts greater than 1.</div>	
+	
+</div>	
+			</div>
+			<div class="investment-content-list">
+				<div class="layout-comment">
+
+	
+
+		
+
+			<!-- I don't know !!!-->
+			<div>Please check the comment setting in config.yml of hexo-theme-Annie!</div>
+			
+		
+		
+	
+
+</div>
+			</div>
+			<div class="investment-content-list">
+				<div class="layout-share">
+	
+	
+
+		
+			
+			<!-- socialShare share -->
+			<div class="social-share"></div>
+
+<!--  css & js -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/css/share.min.css">
+<script async src="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/js/social-share.min.js"></script>
+			
+		
+		
+	
+</div>
+
+
+			</div>
+		</div>	
+	</div>
+	</div>
+</div>
+
+
+
+	<!-- leancloud -->
+	<!--
+	时间：2018-11-27
+	描述：
+		文章访问量：visitors
+		文章喜欢量：likes	
+		文章排行榜：topNPost
+		其他得说明：
+			01-Cookie相关的函数 
+				https://blog.csdn.net/somehow1002/article/details/78511541（Author：somehow1002）
+			02-visitors相关的函数 
+				https://blog.csdn.net/u013553529/article/details/63357382（Author：爱博客大伯）
+				https://notes.doublemine.me/2015-10-21-为NexT主题添加文章阅读量统计功能.html（Author：夏末）
+			03-topNPost相关的函数
+				https://hoxis.github.io/hexo-next-read-rank.html（Author：hoxis）
+			04-likes相关的函数，
+				参考了01 & 02进行简单的设计与实现
+-->
+
+
+	
+
+
+<!-- show math formula -->
+
+
+
+	 
+	<script src="/special-eureka/plugin/clipboard/clipboard.js"></script>
+	<script>
+		// Copy code !
+	    function codePreprocessing() {
+	        $("#article-content .highlight").each(function() {
+
+	            $(this).wrap('<div id="post-code"></div>');
+
+	        })
+
+	        $("#article-content #post-code").each(function() {
+
+	            $(this).prepend('<nav class="copy-nav"><span><i class="code-language"></i></span></nav>');
+
+	        })
+
+	        $("#article-content .copy-nav").each(function() {
+	            var temp = $(this).next().attr('class'),
+	                language = ((temp.length > 9) && (temp != null)) ? temp.substr(10) : "none"; //why 9? Need to check language?
+
+	            $(this).find('.code-language').text(language);
+
+	            $(this).append('<span class="copy-btn"><i class="fa fa-copy" aria-hidden="true"></i></span>');
+
+	        });
+	    }
+
+		function codeCopy() {
+		    $('#article-content #post-code').each(function(i) {
+		        var codeCopyId = 'codeCopy-' + i;
+
+		        var codeNode = $(this).find('.code'),
+		            copyButton = $(this).find('.copy-btn');
+
+		        codeNode.attr('id', codeCopyId);
+		        copyButton.attr('data-clipboard-target-id', codeCopyId);
+		    })
+
+		    
+			var clipboard = new ClipboardJS('.copy-btn', {
+					target: function(trigger) {
+						return document.getElementById(trigger.getAttribute('data-clipboard-target-id'));
+					}
+		      	});
+
+			//pure js
+			function showTooltip(elem, msg) {		   
+				elem.setAttribute('aria-label', msg);
+				elem.setAttribute('class', 'copy-btn copy-status');
+				setTimeout(function() {
+					elem.setAttribute('class', 'copy-btn');
+				}, 2000);
+			}
+
+			clipboard.on('success', function(e) {
+			    e.clearSelection();
+			    console.info('Action:', e.action);		   
+			    console.info('Trigger:', e.trigger);
+			    showTooltip(e.trigger, 'Copied!');
+			    
+			});
+			clipboard.on('error', function(e) {
+			    console.error('Action:', e.action);
+			    console.error('Trigger:', e.trigger);
+			});
+		
+
+		}
+
+		if ($('.layout-post').length) {
+		    codePreprocessing();
+		    codeCopy();
+		} 
+	</script>
+
+
+
+
+
+<link rel="stylesheet" href="/special-eureka/plugin/fancybox/jquery.fancybox.css">
+<script src="/special-eureka/plugin/fancybox/jquery.fancybox.js"></script>
+
+<script type="text/javascript">
+	var titleID = $('.article-title a'),
+		imageID = $('.article-content img'),
+		videoID = $('.article-content video');
+
+	var postTitle = titleID.text() ? titleID.text() : "No post title!";
+
+	imageID.each(function() {
+		var imgPath = $(this).attr('src'),
+			imgTitle = $(this).attr('alt') ? $(this).attr('alt') : "No image description!";
+
+		//给每个匹配的<img>元素打包, 即添加父元素<a>
+		$(this).wrap('<a data-fancybox="gallery" data-caption=" 《 ' + postTitle + ' 》 ' + imgTitle + ' "  href=" ' + imgPath + ' "> </a>');
+	});
+
+	videoID.each(function() {
+		var videoPath = $(this).attr('src');
+
+		//给每个匹配的<img>元素打包, 即添加父元素<a>
+		$(this).wrap('<a data-fancybox href=" ' + videoPath + ' "> </a>');
+	});
+	//TODO：支持html5 video
+
+	if($('#layout-post').length) {
+		$('[data-fancybox="gallery"]').fancybox({
+			loop: true,
+			buttons: [
+				"zoom",
+				"share",
+				"slideShow",
+				"fullScreen",
+				//"download",
+				"thumbs",
+				"close"
+			],
+			protect: false
+		});
+	}
+</script>
+		</main>
+
+		<!--footer-->
+		<footer>
+	<div class="social">
+		<ul>
+	
+		<li>
+			<a href="https://github.com/Xugen-Ma" target="_blank">
+				<i class="fa fa-github"></i>
+			</a>
+		</li>
+			
+</ul>
+
+	</div>
+		
+	<div class="copyright">
+		<p>
+			 
+				&copy;2017 - 2019, content by Xuegen. All Rights Reserved.
+			
+			
+			
+
+	<!-- busuanzi -->
+	<!-- busuanzi -->
+
+		
+	<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+	
+
+		<span id="busuanzi_container_page_pv">
+	  		本文总阅读量<span id="busuanzi_value_page_pv"></span>次
+		</span>
+
+	
+
+
+
+
+		</p>
+		<p>
+			<a href="http://hexo.io/" title="Hexo" target="_blank" rel="noopener">Hexo</a> Theme <a href="https://github.com/Sariay/hexo-theme-Annie" title="Annie" target="_blank" rel="noopener">Annie</a> by Sariay.
+			<a href="javascript:zh_tran('s');" class="zh_click" id="zh_click_s">简体</a> 
+			<a href="javascript:zh_tran('t');" class="zh_click" id="zh_click_t">繁體</a>				
+		</p>
+	</div>		
+</footer>
+		
+	<!-- set '1' to show motto in all pages! -->
+
+	<script src="/special-eureka/plugin/motto/motto.js"></script>
+	
+	<script type="text/javascript">
+		$(".motto").html( getMingYanContent() );
+	</script>	
+
+
+
+
+
+<!-- love effect -->
+
+
+<!-- back to top -->
+
+	
+	<div id="totop">
+  		<a href="javascript:;"  name="TOTOP" class="fa fa-arrow-up" ></a>
+	</div>
+
+
+
+
+<!-- site analysis -->
+
+
+	<!-- site-analysis -->
+	
+	
+	
+	
+	
+ 
+
+<script src="/special-eureka/plugin/vibrant/vibrant.js"></script>
+<script src="/special-eureka/plugin/chinese/chinese.js"></script>
+<script src="/special-eureka/plugin/imgLazyLoader/yall.min.js"></script>
+<script src="/special-eureka/plugin/imgResize/jquery.resizeimagetoparent.min.js"></script>
+<script src="/special-eureka/plugin/nicescroll/jquery.nicescroll.js"></script>
+<script src="/special-eureka/js/resizediv.js"></script>
+<script src="/special-eureka/js/main.js"></script>
+	</body>	
+</html>
