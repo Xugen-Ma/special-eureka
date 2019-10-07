@@ -281,7 +281,7 @@
 
 	<a href="/special-eureka/2019/09/22/40行代码获得百词斩实体书的单词次序/" itemprop="url">
 		<time datetime="2019-09-22T15:20:01.000Z" itemprop="dateUpdated">
-	  		2019-09-23
+	  		2019-09-26
 	  </time>
 	</a> 
 
@@ -356,6 +356,7 @@
 </li>
 </ol>
 </blockquote>
+<p>从这句话可知：百词斩用的是第二个方法。</p>
 <p>按照他这个思路实施的话，我只需要按照他说的两个关键字查找就行了，但是垃圾的<code>miui</code>并不支持对文件夹名进行搜索。但是我之前还是看过一点关于安卓开发的，虽然有些毒瘤公司例如BAT 会把自己在系统中的文件写在系统的根目录下，但是安卓建议的是应该把文件通通写在<code>/android/</code>的目录下，此时鉴定百词斩是不是毒瘤公司的时间到了！</p>
 <p>可喜可贺，百词斩并不是一家毒瘤公司，他老老实实地把文件写在了<code>/android/data/com.jiongji.android.card/</code>中，虽然比着之前直接写在<code>baicizhan</code>的目录中要难找一些，但还是不太困难的一件事情。</p>
 <p>之后就是直接把这个目录下的<code>baicizhan</code>的文件夹全部打包，然后用QQ 发给自己的电脑。</p>
@@ -363,7 +364,7 @@
 <p>直接打开，龟龟，没有序列化过的文件就像一个垃圾桶，但毕竟是为了节约流量嘛，crlf 字符还是挺占空间的，可以理解，但是自己看还是导入 vs 来个快捷键，轻松序列化一下吧。</p>
 <p>还是这样子看起来舒服。</p>
 <h2 id="开始编程"><a href="#开始编程" class="headerlink" title="开始编程"></a>开始编程</h2><p>前两步实际上并不算什么，花费了 40 余分钟就搞好了，但是后面的问题才是真正的问题，应当如何编程？因为我之前从来没有接触过 <code>json</code>，数据库这门课也是睡过去的，我也不太清楚如何编程，不过还是走一步看一步吧。</p>
-<h3 id="json的解析"><a href="#json的解析" class="headerlink" title="json的解析"></a>json的解析</h3><h4 id="引入依赖"><a href="#引入依赖" class="headerlink" title="引入依赖"></a>引入依赖</h4><h5 id="直接导包"><a href="#直接导包" class="headerlink" title="直接导包"></a>直接导包</h5><p>我不是为了专门学习 <code>json</code>也懒得自己造轮子，所以我先想到的就是用前人的伟大经验。</p>
+<h3 id="json的解析"><a href="#json的解析" class="headerlink" title="json的解析"></a>json的解析</h3><h4 id="引入依赖"><a href="#引入依赖" class="headerlink" title="引入依赖"></a>引入依赖</h4><h5 id="直接导包"><a href="#直接导包" class="headerlink" title="直接导包"></a>直接导包</h5><p>我不是为了专门学习 <code>json</code>，也懒得自己造轮子，所以我先想到的就是用前人的伟大经验。</p>
 <p>经过多次辗转，我找到了阿里巴巴的<code>fastjson</code>项目，从<code>github</code> 上下载下来源码，第一个难题就摆在我面前，怎么导？</p>
 <p>下载下来的文件并不是直接编译好的<code>jar</code>包，但是天真的我并不知道这件事情，所以我不断的在<code>IDEA</code>中的<code>project structure</code>中寻找，<del>油腻的师姐在哪里。</del> 导入依赖，删除依赖。折腾了几次，在这折腾的过程中，我想到了之前写安卓项目的时候优雅：写一行依赖项，<code>android studio</code>就直接帮你全下下来，配置好，你自己拿来用就够了。</p>
 <p>在我搜索的过程中，我才认识到一个事实，<code>github</code>上分享的代码大部分都只是源代码，并没有经过编译，我需要自己编译才能够导出来所需的<code>jar</code>包。而<code>fastjson</code>中含有<code>pom.xml</code>文件，这是<code>maven</code>的标志，所以我需要<code>maven</code>将它编译。</p>
@@ -408,6 +409,9 @@
 <blockquote>
 <p>访问<code>list</code>的元素，不能像访问数组一样直接用下标访问，而是用<code>objects.get(id)</code>的方法来访问。</p>
 </blockquote>
+<blockquote>
+<p>写到这里的时候，我本身是想写相对路径的，但是怎么搞都找不到文件，明明放在同一个文件夹中的啊，无奈，先用的绝对路径。之后上网上找思路的时候，貌似说是必须要将项目下的路径写全才可以，所以我就这么写了，如果你知道如何才能写的更简便的话一定要告诉我啊。</p>
+</blockquote>
 <p>解析<code>json</code>的时候，需要一个<code>Java Bean</code>，这个就是<code>word.class</code>：</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">word</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span> topic_id;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> String options;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> String tag_id;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> String word_level_id;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">//Getter and Setter</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
@@ -423,12 +427,16 @@
 
 <p>我需要每300个单词保存在一个文件中，所以有了这个需求。</p>
 <p>这个姑且算个难点：将数据写入多个文本文件中，我也给标出来吧。</p>
+<p>实质上也没有什么难度，每一个文件的文件名都是一行字符串，用一个会变的量再将两部分固定的量拼在一起就够了。</p>
 <p>方法就是设置一个遍历变量<code>i</code>每三百个的时候，再<code>new</code>一个新文本出来。</p>
 <p>其他就是正常的<code>I/O</code>操作，参考了网上的资源[^7]写出来了一个不是很好的代码，最后保存的时候有的文件是299有的是300，不过不太影响，也就懒得深究了。</p>
 <h1 id="尾巴"><a href="#尾巴" class="headerlink" title="尾巴"></a>尾巴</h1><p>说实话，在编码的时候就想着写出来的时候要写个博炫耀一下的，在中间休息的时候也会想想自己在写什么，写出来之后的兴奋劲。但是编码编了两天多，期间遇到了大大小小的问题，最后才写出来40行的代码。我就在想之前轮子哥说过的一句话，大学生要写这样的代码写10k行才能够出师，而这样的代码我觉得满打满算这两年写过的不会超过一千行，自己光顾着玩了，还是没有把时间用在正地方，导致编码量才如此地少吧。</p>
 <p>更博的时候感觉还挺兴奋，但是到最后，写道现在凌晨一点半才写完，看着左下角字数统计写了将近3.5k字，头懵懵的，好几天也没睡好觉了，追的番现在更新也没来得及看，还是坚持写完，现在室友已经躺在床上了。</p>
 <p>突然感觉自己自己的自制力在想做好一件事上的时候，还是不错的，也不像自己所想的，我没有一点自制力的，还是要承认自己一下的。</p>
 <p><em>2019年9月23日01点34分于开封</em></p>
+<blockquote>
+<p>博客主题不支持脚注，佛了QAQ。</p>
+</blockquote>
 <p>[^1]: <a href="https://www.jianshu.com/p/2717e9019da2" target="_blank" rel="noopener">怎么把百词斩中的单词列表打印出来</a><br>[^2]: <a href="https://www.cnblogs.com/fuckgiser/p/5983590.html" target="_blank" rel="noopener">破解百词斩单词数据之旅</a><br>[^3]: <a href="https://blog.csdn.net/dearfinance/article/details/81380887" target="_blank" rel="noopener">使用fastjson解析json文件</a><br>[^4]: <a href="https://www.runoob.com/w3cnote/java-class-forname.html" target="_blank" rel="noopener">Java class.forname 详解</a><br>[^5]: <a href="https://zhidao.baidu.com/question/67870646.html" target="_blank" rel="noopener">conn.setAutoCommit(true)和(false)的区别</a><br>[^6]: <a href="https://www.cnblogs.com/yizhiamumu/p/8855089.html" target="_blank" rel="noopener">json.parseArray源码解析</a><br>[^7]: <a href="https://www.runoob.com/java/java-files-io.html" target="_blank" rel="noopener">Java 流(Stream)、文件(File)和IO</a> </p>
 	
 	</div>
@@ -447,6 +455,10 @@
 				
 	<span>
 		<a href="javascript: window.scrollTo(0, 0);">返回顶部</a>
+		
+			<a href="/special-eureka/2019/10/07/三次握手与四次挥手——谈谈-TCP-ip-连接建立与断开那些事/" title="三次握手与四次挥手——谈谈 TCP/ip 连接建立与断开那些事" rel="prev">
+				&laquo;上一篇
+			</a>
 		
 		
 			<a href="/special-eureka/2019/09/19/计算机网络-物理层/" title="计算机网络-物理层" rel="next">

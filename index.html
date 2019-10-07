@@ -234,6 +234,169 @@
 				<div class="post-title" id="post-title-index">			
 					<i class="fa fa-paper-plane-o" aria-hidden="true"></i>
 					
+	<a href="/special-eureka/2019/10/07/我tcp可是铁齿金不换-诚实可靠小郎君——谈谈可靠数据传输服务/" itemprop="url">
+		我tcp可是铁齿金不换,诚实可靠小郎君——谈谈可靠数据传输服务
+	</a>
+
+				</div>
+
+				<div class="post-content">
+					
+						附
+rdt_send()函数：上层可以调用数据传输协议的发送方。其中 rdt 为 reliable data transmission。
+它将要发送的数据交付给位于接收方的上层。
+
+rdt_rev() 函数：当数据被交付给接收方时，接收方调用这个函数。
+
+deliver_data() 函数：当接收方想要将数据交付给高层，利用此函数将数据交付给高层。
+
+在本文中，仅考虑单向数据传输的情况，即数据从发送端到接收端。
+
+
+构造可靠数据传输协议让我们来从特殊到一般，一步步地从完全可靠的信道到不可靠的信道，最终得到一个完美的，可靠的数据传输协议。
+经由完全可靠信道的可靠数据传输：rdt 1.0这是...
+					
+				</div>
+				
+				<div class="post-meta">
+					<span>
+						发布于
+						<i>
+							
+
+
+
+
+
+
+	<a href="/special-eureka/2019/10/07/我tcp可是铁齿金不换-诚实可靠小郎君——谈谈可靠数据传输服务/" itemprop="url">
+		<time datetime="2019-10-07T13:44:26.000Z" itemprop="datePublished">
+	  		2019-10-07
+	  </time>
+	</a> 
+
+						</i>
+					</span>
+					
+					
+
+
+
+					
+
+	<!-- leancloud -->
+	<!--
+	时间：2018-11-27
+	描述：
+		文章访问量：visitors
+		文章喜欢量：likes	
+		文章排行榜：topNPost
+		其他得说明：
+			01-Cookie相关的函数 
+				https://blog.csdn.net/somehow1002/article/details/78511541（Author：somehow1002）
+			02-visitors相关的函数 
+				https://blog.csdn.net/u013553529/article/details/63357382（Author：爱博客大伯）
+				https://notes.doublemine.me/2015-10-21-为NexT主题添加文章阅读量统计功能.html（Author：夏末）
+			03-topNPost相关的函数
+				https://hoxis.github.io/hexo-next-read-rank.html（Author：hoxis）
+			04-likes相关的函数，
+				参考了01 & 02进行简单的设计与实现
+-->
+
+
+	
+
+					
+						<span class="right">      	
+							<a href="/special-eureka/2019/10/07/我tcp可是铁齿金不换-诚实可靠小郎君——谈谈可靠数据传输服务/" title="阅读全文">阅读全文</a>	
+						</span>
+					
+				</div>
+			</div>
+		</div>
+	
+		<div class="post" id="post">
+			<div class="post-text">
+				<div class="post-title" id="post-title-index">			
+					<i class="fa fa-paper-plane-o" aria-hidden="true"></i>
+					
+	<a href="/special-eureka/2019/10/07/三次握手与四次挥手——谈谈-TCP-ip-连接建立与断开那些事/" itemprop="url">
+		三次握手与四次挥手——谈谈 TCP/ip 连接建立与断开那些事
+	</a>
+
+				</div>
+
+				<div class="post-content">
+					
+						三次握手假设运行在客户端的一台主机上的进程，想与另一台服务器端的进程建立一条连接，客户中的TCP会用以下方式与主机的TCP建立联系。
+第一次握手——客户端–&gt;服务器客户端的TCP首先向服务器端的TCP发送一个特殊的TCP报文段。该报文段不包含应用层数据。但在报文段的首部行的SYN标志位置1。另外，客户会随机选择一个初始的序号（client_isn）并将该序号字段放在该其实的TCP SYN报文段的序号字段。该报文段会封装在一个ip数据报中，并发送给服务器。
+
+此时，客户端的TCP进入了SYN_SENT状态。在这种状态下，客户TCP等待来自服务器TCP的对客户所发报文段的进行确认且SY...
+					
+				</div>
+				
+				<div class="post-meta">
+					<span>
+						发布于
+						<i>
+							
+
+
+
+
+
+
+	<a href="/special-eureka/2019/10/07/三次握手与四次挥手——谈谈-TCP-ip-连接建立与断开那些事/" itemprop="url">
+		<time datetime="2019-10-07T13:44:21.000Z" itemprop="datePublished">
+	  		2019-10-07
+	  </time>
+	</a> 
+
+						</i>
+					</span>
+					
+					
+
+
+
+					
+
+	<!-- leancloud -->
+	<!--
+	时间：2018-11-27
+	描述：
+		文章访问量：visitors
+		文章喜欢量：likes	
+		文章排行榜：topNPost
+		其他得说明：
+			01-Cookie相关的函数 
+				https://blog.csdn.net/somehow1002/article/details/78511541（Author：somehow1002）
+			02-visitors相关的函数 
+				https://blog.csdn.net/u013553529/article/details/63357382（Author：爱博客大伯）
+				https://notes.doublemine.me/2015-10-21-为NexT主题添加文章阅读量统计功能.html（Author：夏末）
+			03-topNPost相关的函数
+				https://hoxis.github.io/hexo-next-read-rank.html（Author：hoxis）
+			04-likes相关的函数，
+				参考了01 & 02进行简单的设计与实现
+-->
+
+
+	
+
+					
+						<span class="right">      	
+							<a href="/special-eureka/2019/10/07/三次握手与四次挥手——谈谈-TCP-ip-连接建立与断开那些事/" title="阅读全文">阅读全文</a>	
+						</span>
+					
+				</div>
+			</div>
+		</div>
+	
+		<div class="post" id="post">
+			<div class="post-text">
+				<div class="post-title" id="post-title-index">			
+					<i class="fa fa-paper-plane-o" aria-hidden="true"></i>
+					
 	<a href="/special-eureka/2019/09/22/40行代码获得百词斩实体书的单词次序/" itemprop="url">
 		40行代码获得百词斩实体书的单词次序
 	</a>
@@ -969,162 +1132,6 @@ P2P 文件共享系统。
 					
 						<span class="right">      	
 							<a href="/special-eureka/2019/08/20/计算机网络第二章/" title="阅读全文">阅读全文</a>	
-						</span>
-					
-				</div>
-			</div>
-		</div>
-	
-		<div class="post" id="post">
-			<div class="post-text">
-				<div class="post-title" id="post-title-index">			
-					<i class="fa fa-paper-plane-o" aria-hidden="true"></i>
-					
-	<a href="/special-eureka/2019/08/20/PATEST-A1018-题解/" itemprop="url">
-		PATEST-A1018-题解
-	</a>
-
-				</div>
-
-				<div class="post-content">
-					
-						START:
-我真的感觉那个比赛我应该给放弃掉了= =，出去转一圈搞得半个月没写代码，现在东西都忘得差不多了= =
-
-题意N个车站和一个管理中心，给定终点，选取管理中心到终点的最短路径，若有多条最短路径，要根据一些奇怪的标准从中选取一条唯一的最短路径（首先最小take其次最小return）。
-解法dijkstra+dfs
-代码1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859606162636465666768697071...
-					
-				</div>
-				
-				<div class="post-meta">
-					<span>
-						发布于
-						<i>
-							
-
-
-
-
-
-
-	<a href="/special-eureka/2019/08/20/PATEST-A1018-题解/" itemprop="url">
-		<time datetime="2019-08-20T08:37:19.000Z" itemprop="datePublished">
-	  		2019-08-20
-	  </time>
-	</a> 
-
-						</i>
-					</span>
-					
-					
-
-
-
-					
-
-	<!-- leancloud -->
-	<!--
-	时间：2018-11-27
-	描述：
-		文章访问量：visitors
-		文章喜欢量：likes	
-		文章排行榜：topNPost
-		其他得说明：
-			01-Cookie相关的函数 
-				https://blog.csdn.net/somehow1002/article/details/78511541（Author：somehow1002）
-			02-visitors相关的函数 
-				https://blog.csdn.net/u013553529/article/details/63357382（Author：爱博客大伯）
-				https://notes.doublemine.me/2015-10-21-为NexT主题添加文章阅读量统计功能.html（Author：夏末）
-			03-topNPost相关的函数
-				https://hoxis.github.io/hexo-next-read-rank.html（Author：hoxis）
-			04-likes相关的函数，
-				参考了01 & 02进行简单的设计与实现
--->
-
-
-	
-
-					
-						<span class="right">      	
-							<a href="/special-eureka/2019/08/20/PATEST-A1018-题解/" title="阅读全文">阅读全文</a>	
-						</span>
-					
-				</div>
-			</div>
-		</div>
-	
-		<div class="post" id="post">
-			<div class="post-text">
-				<div class="post-title" id="post-title-index">			
-					<i class="fa fa-paper-plane-o" aria-hidden="true"></i>
-					
-	<a href="/special-eureka/2019/08/15/访谈｜齐泽克：革命第二天，你在家醒来之后会做些什么？/" itemprop="url">
-		访谈｜齐泽克：革命第二天，你在家醒来之后会做些什么？
-	</a>
-
-				</div>
-
-				<div class="post-content">
-					
-						斯拉沃热·齐泽克（Slavoj Žižek），当今世界最活跃的公共知识分子之一，也是极富争议的学术鬼才。
-作为一位来自前南斯拉夫地区的学术明星，他将拉康精神分析、黑格尔辩证法和马克思主义哲学融为一体，撰写了大量的学术著作和时评、影评。他见解独到，但也充满争议。他以“激进左翼”的立场闻名学界，却又旗帜鲜明地反对西方左派所倡导的“政治正确”。他不遗余力地批判资本主义带来的种种弊端，却又在资本主义的文化市场上受到极大的欢迎。有人甚至将他称为：“西方最危险的哲学家”。
-2019年夏天，甚少面对中文媒体发声的齐泽克，在他位于斯洛文尼亚首都卢布尔雅那的家中接受了我的专访。
-【问】我想先以一个相对宏大...
-					
-				</div>
-				
-				<div class="post-meta">
-					<span>
-						发布于
-						<i>
-							
-
-
-
-
-
-
-	<a href="/special-eureka/2019/08/15/访谈｜齐泽克：革命第二天，你在家醒来之后会做些什么？/" itemprop="url">
-		<time datetime="2019-08-15T06:07:09.000Z" itemprop="datePublished">
-	  		2019-08-15
-	  </time>
-	</a> 
-
-						</i>
-					</span>
-					
-					
-
-
-
-					
-
-	<!-- leancloud -->
-	<!--
-	时间：2018-11-27
-	描述：
-		文章访问量：visitors
-		文章喜欢量：likes	
-		文章排行榜：topNPost
-		其他得说明：
-			01-Cookie相关的函数 
-				https://blog.csdn.net/somehow1002/article/details/78511541（Author：somehow1002）
-			02-visitors相关的函数 
-				https://blog.csdn.net/u013553529/article/details/63357382（Author：爱博客大伯）
-				https://notes.doublemine.me/2015-10-21-为NexT主题添加文章阅读量统计功能.html（Author：夏末）
-			03-topNPost相关的函数
-				https://hoxis.github.io/hexo-next-read-rank.html（Author：hoxis）
-			04-likes相关的函数，
-				参考了01 & 02进行简单的设计与实现
--->
-
-
-	
-
-					
-						<span class="right">      	
-							<a href="/special-eureka/2019/08/15/访谈｜齐泽克：革命第二天，你在家醒来之后会做些什么？/" title="阅读全文">阅读全文</a>	
 						</span>
 					
 				</div>
