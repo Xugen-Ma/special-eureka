@@ -13,7 +13,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
   <title>
     
-      PATEST-A1002-题解 | Xugen-Ma
+      tag test | Xugen-Ma
     
   </title>
   <meta name="author" content="Xuegen">
@@ -160,7 +160,7 @@
 	<!-- Page title -->
 	<p>
 		
-			当前文章&nbsp;:&nbsp;《PATEST-A1002-题解》
+			当前文章&nbsp;:&nbsp;《tag test》
 		
 	</p>
 
@@ -228,18 +228,6 @@
 		插件作者：KELEN
 		插件来源: https://github.com/KELEN/katelog
 -->
-
-	
-		<div class="layout-toc">
-			<div id="layout-toc">
-				<div class="k-catelog-list" id="catelog-list" data-title="文章目录"></div>
-			</div>
-		</div>
-
-		
-		<script src="/special-eureka/plugin/toc/katelog.min.js"></script>
-
-		
 	 
 
 <div class="layout-post">
@@ -247,8 +235,8 @@
 	<div class="article-title">
 		<i class="fa fa-paper-plane-o" aria-hidden="true"></i>
 		
-	<a href="/special-eureka/2019/07/11/PATEST-A1002-题解/" itemprop="url">
-		PATEST-A1002-题解
+	<a href="/special-eureka/2019/10/25/tag-test/" itemprop="url">
+		tag test
 	</a>
 
 	</div>
@@ -261,9 +249,9 @@
 
 	发布于
 
-	<a href="/special-eureka/2019/07/11/PATEST-A1002-题解/" itemprop="url">
-		<time datetime="2019-07-11T06:23:27.000Z" itemprop="datePublished">
-	  		2019-07-11
+	<a href="/special-eureka/2019/10/25/tag-test/" itemprop="url">
+		<time datetime="2019-10-24T16:36:31.000Z" itemprop="datePublished">
+	  		2019-10-25
 	  </time>
 	</a>
 	&nbsp;
@@ -279,9 +267,9 @@
 
 	更新于
 
-	<a href="/special-eureka/2019/07/11/PATEST-A1002-题解/" itemprop="url">
-		<time datetime="2019-07-11T06:23:27.000Z" itemprop="dateUpdated">
-	  		2019-07-26
+	<a href="/special-eureka/2019/10/25/tag-test/" itemprop="url">
+		<time datetime="2019-10-24T16:36:31.000Z" itemprop="dateUpdated">
+	  		2019-10-25
 	  </time>
 	</a> 
 
@@ -292,12 +280,12 @@
 			<i class="fa fa-tags"></i>
 			
 	
-		<a href="/special-eureka/tags/PAT/" class=" ">
-			PAT
+		<a href="/special-eureka/tags/tag-test/" class=" ">
+			tag test
 		</a>
 	
-		<a href="/special-eureka/tags/题解/" class=" ">
-			题解
+		<a href="/special-eureka/tags/功能测试/" class=" ">
+			功能测试
 		</a>
 	
 		
@@ -310,13 +298,25 @@
 	</div>
 
 	<div class="article-content" id="article-content">
-		<h2 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h2><p>多项式加法。</p>
-<h2 id="想法"><a href="#想法" class="headerlink" title="想法"></a>想法</h2><p>本以为要用数组来解，但是想一想光搜索就容易爆时间，我又不想自己写一个二叉排序树的算法。</p>
-<p>这样一想，没有思路，我就去看题解了。</p>
-<p>发现 map 正好是一个映射关系，恰好符合这道题的要求。</p>
-<p>所以本题的解题思路就是，如果 first  对应的值存在就加上 second，对应的值不存在就存入，之后利用反向迭代器统计非零元个数，并输出结果。</p>
-<p>最后输出应当使用 printf ，使用 cout 会爆流。</p>
-<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;map&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> a_count, b_count;		 <span class="comment">//多项式非零元个数</span></span><br><span class="line">	<span class="built_in">map</span>&lt;<span class="keyword">int</span>, <span class="keyword">double</span>&gt; p;</span><br><span class="line">	</span><br><span class="line">	</span><br><span class="line">	<span class="built_in">cin</span> &gt;&gt; a_count;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; a_count; ++j)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">int</span> <span class="built_in">exp</span>;<span class="comment">//指数</span></span><br><span class="line">		<span class="keyword">double</span> coe;<span class="comment">//真数</span></span><br><span class="line">		<span class="built_in">cin</span> &gt;&gt; <span class="built_in">exp</span> &gt;&gt; coe;</span><br><span class="line">		<span class="comment">/*map.insert()函数在执行时,若const值已经存在,就不再执行插入操作*/</span></span><br><span class="line">		<span class="keyword">if</span> (!p.insert(make_pair(<span class="built_in">exp</span>, coe)).second )</span><br><span class="line">		&#123;</span><br><span class="line">			p[<span class="built_in">exp</span>] = p[<span class="built_in">exp</span>] + coe;</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	</span><br><span class="line">	<span class="built_in">cin</span> &gt;&gt; b_count;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; b_count; ++j)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">int</span> <span class="built_in">exp</span>;<span class="comment">//指数</span></span><br><span class="line">		<span class="keyword">double</span> coe;<span class="comment">//真数</span></span><br><span class="line">		<span class="built_in">cin</span> &gt;&gt; <span class="built_in">exp</span> &gt;&gt; coe;</span><br><span class="line">		<span class="keyword">if</span> (!p.insert(make_pair(<span class="built_in">exp</span>, coe)).second )</span><br><span class="line">		&#123;</span><br><span class="line">			p[<span class="built_in">exp</span>] = p[<span class="built_in">exp</span>] + coe;</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">int</span> total_count = <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">for</span> (<span class="built_in">map</span>&lt;<span class="keyword">int</span>, <span class="keyword">double</span>&gt;::reverse_iterator iter = p.rbegin();</span><br><span class="line">		iter != p.rend(); iter++)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">if</span> ((*iter).second != <span class="number">0</span>)</span><br><span class="line">		&#123;</span><br><span class="line">			total_count++;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	</span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; total_count;</span><br><span class="line">	<span class="keyword">for</span> (<span class="built_in">map</span>&lt;<span class="keyword">int</span>, <span class="keyword">double</span>&gt;::reverse_iterator iter = p.rbegin(); </span><br><span class="line">		iter != p.rend(); iter++)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">if</span> ((*iter).second != <span class="number">0</span>)</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="built_in">printf</span>(<span class="string">" %d %.1lf"</span>, (*iter).first, (*iter).second);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+		<p><a href="https://github.com/MikeCoder/hexo-tag-cloud" target="_blank" rel="noopener">hexo-tag-cloud</a></p>
+<p>语法：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&#123; colorquote [type] %&#125;</span><br><span class="line">content</span><br><span class="line">&#123;% endcolorquote %&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&#123;% colorquote warning %&#125;</span><br><span class="line">这是一条警告信息!</span><br><span class="line">&#123;% endcolorquote %&#125;</span><br></pre></td></tr></table></figure>
+
+<blockquote class="colorquote warning"><p>这是一条警告信息!</p></blockquote>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&#123;% colorquote danger %&#125;</span><br><span class="line">这是一条危险信息!</span><br><span class="line">&#123;% endcolorquote %&#125;</span><br></pre></td></tr></table></figure>
+
+<blockquote class="colorquote danger"><p>这是一条危险信息!</p></blockquote>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&#123;% colorquote info %&#125;</span><br><span class="line"></span><br><span class="line">这是一条info信息!</span><br><span class="line"></span><br><span class="line">&#123;% endcolorquote %&#125;</span><br></pre></td></tr></table></figure>
+
+<blockquote class="colorquote info"><p>这是一条info信息!</p></blockquote>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&#123;% colorquote success %&#125;</span><br><span class="line">这是一条成功信息!</span><br><span class="line">&#123;% endcolorquote %&#125;</span><br></pre></td></tr></table></figure>
+
+<blockquote class="colorquote success"><p>这是一条成功信息!</p></blockquote>
 
 	
 	</div>
@@ -336,12 +336,8 @@
 	<span>
 		<a href="javascript: window.scrollTo(0, 0);">返回顶部</a>
 		
-			<a href="/special-eureka/2019/07/11/map用法/" title="map用法" rel="prev">
-				&laquo;上一篇
-			</a>
 		
-		
-			<a href="/special-eureka/2019/07/11/PATEST-A1001-题解/" title="PATEST A1001 题解" rel="next">
+			<a href="/special-eureka/2019/10/24/计网第四章复习题/" title="计网第四章复习题" rel="next">
 				下一篇&raquo;
 			</a>
 			
