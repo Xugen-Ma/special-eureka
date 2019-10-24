@@ -228,6 +228,18 @@
 		插件作者：KELEN
 		插件来源: https://github.com/KELEN/katelog
 -->
+
+	
+		<div class="layout-toc">
+			<div id="layout-toc">
+				<div class="k-catelog-list" id="catelog-list" data-title="文章目录"></div>
+			</div>
+		</div>
+
+		
+		<script src="/special-eureka/plugin/toc/katelog.min.js"></script>
+
+		
 	 
 
 <div class="layout-post">
@@ -288,7 +300,241 @@
 	</div>
 
 	<div class="article-content" id="article-content">
-			
+		<h1 id="1"><a href="#1" class="headerlink" title="1"></a>1</h1><p>网络层的分组是数据报。</p>
+<p>路由器和第二层交换机的区别：</p>
+<ul>
+<li>路由器属于网络层设备，二第二层交换机属于链路层设备。</li>
+<li>路由器通常负责将输入端口收到的数据报依照路由表转发给输出端口并以之转发给其他第三层网络设备。而第二层交换机通过自身学习到的mac地址转发表，进行数据转发。</li>
+</ul>
+<blockquote>
+<p>每台路由器数据平面的作用是：向其输入链路到输出链路转发数据报。（转发）</p>
+<p>控制平面的作用是：协调路由器的转发动作，使数据报最终沿着源和目的主机之间的路由器路径最终进行端到端的传输。（路由选择）</p>
+<p>路由器具有截断的数据栈，没有网络层以上的部分，因为它不运行运输层和应用层协议。</p>
+</blockquote>
+<h1 id="2"><a href="#2" class="headerlink" title="2"></a>2</h1><p>数据平面的作用：从路由器的输入链路向输出链路发送数据报。</p>
+<p>控制平面的作用：协调这些路由器的转发动作，使得数据报沿发送端流向接收端。</p>
+<blockquote>
+<p>数据平面更加关注微观，强调每台路由器的动作，而控制平面更加关注宏观，强调整个链路上路由器的配合。</p>
+</blockquote>
+<h1 id="3"><a href="#3" class="headerlink" title="3"></a>3</h1><p>转发：即将数据报从输入端口转发到输出端口，通常只需要几纳秒的时间，使用硬件实现。</p>
+<p>路由选择：确定分组从源到目的所采用的端到端路径的网络范围处理过程，通常需要几秒，使用软件实现。</p>
+<blockquote>
+<p>如果以高速路类比，路由选择是你用导航软件规划从哪条路走，而转发是你经过立体交通桥，将你从绕城高速转向国家级高速的过程。</p>
+</blockquote>
+<h1 id="4"><a href="#4" class="headerlink" title="4"></a>4</h1><p>检查到达数据报的若干首部值并在表中进行检索，最后确认该数据报应当从何端口发出。</p>
+<h1 id="5"><a href="#5" class="headerlink" title="5"></a>5</h1><p>因特网中的网络层只提供一种服务：尽力而为的服务。</p>
+<p>什么也提供不了：无法保证数据报能够按时交付，也无法保证按序交付，也确保有最小带宽，更无法保证交付。</p>
+<h1 id="6"><a href="#6" class="headerlink" title="6"></a>6</h1><p>输入、输出端口，交换结构用硬件实现，因为其需要在纳秒的时间内，完成转发的过程。</p>
+<p>路由选择处理器用软件实现，因为其是在秒间完成路由选择的动作。</p>
+<p>数据平面更多关注的是转发，用硬件，快。</p>
+<p>控制平面更多关注路由选择，用软件。</p>
+<h1 id="7"><a href="#7" class="headerlink" title="7"></a>7</h1><p>假设在每个端口都没有影子副本的情况下，各个端口想要获取转发表的内容，只能轮流访问保存着转发表的内存；而同时，路由转发处理器又在更新路由器的转发表。所以这涉及到了临界区，所以必须加互斥锁。而加锁和解锁带来了大量的时间和空间的浪费，这对于转发这一纳秒级的动作是无法接收的，所以，必须需要影子副本，才能够解决加锁和解锁带来的开销。</p>
+<h1 id="8"><a href="#8" class="headerlink" title="8"></a>8</h1><blockquote>
+<p>基于目的地址的转发有两种模式：</p>
+<ul>
+<li>一条 ip 占一行，而超过40亿行的查询开销是非常高昂的。</li>
+<li>多个 ip 地址使用最长前缀匹配对应一个表项，数据报通过该表项对应的端口输出。</li>
+</ul>
+</blockquote>
+<blockquote>
+<p>基于目的地址的转发意味着路由选择处理器需要维护着一张转发表，并且执行转发过程需要查询转发表。</p>
+</blockquote>
+<p>在基于目的地址的转发中，使用的是匹配加动作：匹配是指查询转发表，动作是指将分组发送给有特定输出端口的交换结构。</p>
+<p>而在通用转发中，同样使用的是匹配加动作，但是匹配是指查询分组中的多个字段，而动作可以是转发，负载均衡，重写首部值，有意识地丢弃分组。</p>
+<p>可以说，通用转发是一般化的基于目的地址的转发。</p>
+<h1 id="9"><a href="#9" class="headerlink" title="9"></a>9</h1><p>最长前缀匹配。</p>
+<h1 id="10"><a href="#10" class="headerlink" title="10"></a>10</h1><ul>
+<li>经内存交换：在输入和输出端口见的交换是在cpu直接控制下完成的。</li>
+<li>经总线交换：输入端口经一根共享总线将分组直接传送给输出端口，不需要cpu控制。</li>
+<li>经互联网络交换：使用一个更复杂的互联网络，来实现从输入端口到输出端口的并行传输。</li>
+</ul>
+<p>经互联网络交换。</p>
+<h1 id="11"><a href="#11" class="headerlink" title="11"></a>11</h1><blockquote>
+<p>随着队列的增长，路由器的缓存空间最终将会耗尽，会出现丢包现象。</p>
+</blockquote>
+<p>如果位于两个输入端口前部的两个分组发往同一输出队列，则其中一个输入队列会出现排队现象。而排队的长度逐渐增长，输入端口的缓存被耗尽，就会出现分组丢失现象。</p>
+<p>因为输入队列过长，会导致丢包，所以必须采用控制传入速率的方法，才能够将队列长度限制到一定范围，避免大量丢包。</p>
+<h1 id="12"><a href="#12" class="headerlink" title="12"></a>12</h1><blockquote>
+<p>随着队列的增长，路由器的缓存空间最终将会耗尽，会出现丢包现象。</p>
+</blockquote>
+<p>分组从输入端口经有路由交换结构到达输入端口，输入端口将分组推出到输出链路。而输出端口推出的速率是一定的，其后的分组需要在输出端口处进行排队，当排队分组将输出端口的缓存耗尽，会出现丢包现象。</p>
+<p>输出队列的增长的原因是交换结构转发的速度远大于推出速度，所以提高转发速度不仅不利于输出队列长度的减小，反而会增加丢包的程度。</p>
+<h1 id="13"><a href="#13" class="headerlink" title="13"></a>13</h1><p>多个输入端口因想要同时向一个输出端口发送分组而产生的阻塞，被称为HOL阻塞，而这种阻塞发生在输入端口处。</p>
+<h1 id="14"><a href="#14" class="headerlink" title="14"></a>14</h1><p>fifo</p>
+<h1 id="15"><a href="#15" class="headerlink" title="15"></a>15</h1><p>基于ip的实时流量分组对于时延的敏感程度要高于非实时流量，所以需要保证时延敏感应用的分组快速被转发。</p>
+<h1 id="16"><a href="#16" class="headerlink" title="16"></a>16</h1><p>rr分类，但是每次循环中，每个类中分组只传输一次。</p>
+<p>wfq分类，在每次循环中，高权重的类中的分组可能被传输多次。</p>
+<p>存在，wfq中每个类的权重都相同，或者每个类只有一个分组。</p>
+<h1 id="17"><a href="#17" class="headerlink" title="17"></a>17</h1><p>根据ipv4的协议首部字段。</p>
+<p>根据ipv6的下一个首部字段。</p>
+<h1 id="18"><a href="#18" class="headerlink" title="18"></a>18</h1><p>ipv4 ttl</p>
+<p>ipv6 跳限制</p>
+<h1 id="19"><a href="#19" class="headerlink" title="19"></a>19</h1><p>在ipv4的数据报中每经过一台路由器，就需要将数据报的首部检验和进行重新填充（ttl字段会发生改变）。</p>
+<p>对于运输层报文段，由于网络层对它是透明的，所以每经过一台路由器并不会引起运输层报文段的检验和的重填充。</p>
+<blockquote>
+<ul>
+<li>数据报的首部检验和仅计算首部行。报文段首部中的检验和是对整个报文段(包括承载的应用层数据部分)都进行计算的。</li>
+<li>TCP/UDP和IP不一定属于同一个协议栈, TCP能够运行在别的网络协议上, IP数据报也能携带除了TCP/IP以外的其他数据.</li>
+</ul>
+</blockquote>
+<h1 id="20"><a href="#20" class="headerlink" title="20"></a>20</h1><p>当某条链路的mtu比该ip数据报的长度小。</p>
+<p>为不降低路由器的性能，片的分割在源完成，重组在目的系统完成。</p>
+<h1 id="21"><a href="#21" class="headerlink" title="21"></a>21</h1><p>有，几个端口，几个ip</p>
+<h1 id="22"><a href="#22" class="headerlink" title="22"></a>22</h1><p>223=1011 1111</p>
+<p>1=0001</p>
+<p>3=0011</p>
+<p>27=0001 1011</p>
+<p>即为：1011 1111 0000 0001 0000 0011 0001 1011</p>
+<h1 id="23"><a href="#23" class="headerlink" title="23"></a>23</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">ipv4 address:192.168.3.1</span><br><span class="line">255.255.255.0</span><br><span class="line">dhcp addr:192.168.3.1</span><br><span class="line">dns addr:8.8.8.8</span><br></pre></td></tr></table></figure>
+
+<h1 id="24"><a href="#24" class="headerlink" title="24"></a>24</h1><p><img src="2019/10/24/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E8%87%AA%E9%A1%B6%E8%80%8C%E4%B8%8B%E6%96%B9%E6%B3%95-%E7%AC%AC%E5%9B%9B%E7%AB%A0%E5%A4%8D%E4%B9%A0%E9%A2%98/24.svg" alt="网络拓扑图"></p>
+<p>如图，经过8个端口。需要4张路由表，其中路由器上三张，源主机一张。</p>
+<blockquote>
+<p>自己电脑上的路由表可用命令·<code>Route Print</code>查询。</p>
+</blockquote>
+<h1 id="25"><a href="#25" class="headerlink" title="25"></a>25</h1><ol>
+<li><p>假设使用的是ipv4协议：</p>
+<p>tcp报文段首部行：20字节。</p>
+<p>ipv4数据报首部行：20字节。</p>
+<p>总添加：40字节。</p>
+<p>应用数据占比：20/（40+20）*100%=33%</p>
+</li>
+<li><p>假设使用的是ipv6协议：</p>
+<p>tcp报文段首部行：20字节。</p>
+<p>ipv4数据报首部行：40字节。</p>
+<p>总添加：60字节。</p>
+<p>应用数据占比：20/（60+20）*100%=25%</p>
+</li>
+</ol>
+<h1 id="26"><a href="#26" class="headerlink" title="26"></a>26</h1><p>  <img src="%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E8%87%AA%E9%A1%B6%E8%80%8C%E4%B8%8B%E6%96%B9%E6%B3%95-%E7%AC%AC%E5%9B%9B%E7%AB%A0%E5%A4%8D%E4%B9%A0%E9%A2%98/26.svg" alt="网络拓扑图"></p>
+<p>DHCP。</p>
+<p>使用NAT，因为ISP仅为路由器分配一个IP，而为使家庭中的pc都能够连接上互联网，只能够使用NAT技术。</p>
+<h1 id="27"><a href="#27" class="headerlink" title="27"></a>27</h1><p>路由聚合：使用单个网络前缀通告多个网络能力。</p>
+<p>当组织外的路由器转发一个数据报，且数据报的目的地址位于该组织内部，仅需考虑该目的地址前x比特的内容。这将大大减少这些路由器中转发表的长度。</p>
+<h1 id="28"><a href="#28" class="headerlink" title="28"></a>28</h1><p>“即插即用”和”零配置”描述的是DHCP协议。DHCP协议意味着能够让一个主机自动地连接入一个网络。</p>
+<h1 id="29"><a href="#29" class="headerlink" title="29"></a>29</h1><p><code>10.0.0.0/8</code>，<code>176.16/12</code>，<code>192.168/16</code>三个字段为专用网络。</p>
+<p>不会。因为有数十万的网络使用者这块地址，不具有唯一性。</p>
+<h1 id="30"><a href="#30" class="headerlink" title="30"></a>30</h1><p>ipv4的字段：</p>
+<table>
+<thead>
+<tr>
+<th align="center">字段名</th>
+<th align="center">ipv4比特数</th>
+<th align="center">ipv6比特数</th>
+<th align="center">ipv4</th>
+<th align="center">ipv6</th>
+<th align="center">更多描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">版本号</td>
+<td align="center">4</td>
+<td align="center">4</td>
+<td align="center">4</td>
+<td align="center">6</td>
+<td align="center">数据报ip协议版本</td>
+</tr>
+<tr>
+<td align="center">首部长度</td>
+<td align="center">4</td>
+<td align="center">N/A</td>
+<td align="center">一个ipv4数据报报头是变长的（选项），故须此字段判断有效载荷开始的比特数</td>
+<td align="center">N/A</td>
+<td align="center">ipv6协议中已取消</td>
+</tr>
+<tr>
+<td align="center">服务类型</td>
+<td align="center">8</td>
+<td align="center">8/20</td>
+<td align="center">TOS，使不同类型的数据报相互区分</td>
+<td align="center">称为流量类型（类似TOS）/流标签（标记一个流）</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">数据报长度</td>
+<td align="center">16</td>
+<td align="center">16</td>
+<td align="center">数据报很少能超过1500字节</td>
+<td align="center">有效载荷长度（不包括报头长度，即MTU）</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">标志、标记、片偏移</td>
+<td align="center">3/16/13</td>
+<td align="center">N/A</td>
+<td align="center">y与ip分片有关</td>
+<td align="center">N/A</td>
+<td align="center">ipv6协议中已取消</td>
+</tr>
+<tr>
+<td align="center">寿命</td>
+<td align="center">8</td>
+<td align="center"></td>
+<td align="center">TTL，保证数据报不会永远在网络中循环。经过一台路由器-1,为0丢包</td>
+<td align="center">跳限制</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">协议</td>
+<td align="center">8</td>
+<td align="center"></td>
+<td align="center">标记数据报中的数据部分应当被交付给哪个上层协议</td>
+<td align="center">下一个首部</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">首部检验和</td>
+<td align="center">16</td>
+<td align="center">N/A</td>
+<td align="center">仅计算首部行。每经过一个路由器须重新计算（字段有变化，如：TTL）</td>
+<td align="center">N/A</td>
+<td align="center">ipv6协议中已取消</td>
+</tr>
+<tr>
+<td align="center">源和目的地址</td>
+<td align="center">32/32</td>
+<td align="center">128/128</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">选项</td>
+<td align="center"></td>
+<td align="center">N/A</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center">ipv6协议中已取消</td>
+</tr>
+<tr>
+<td align="center">数据</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">首部总大小</td>
+<td align="center">20(加上tcp头部为40)</td>
+<td align="center">40（加上tcp头部为60）</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+</tbody></table>
+<h1 id="31"><a href="#31" class="headerlink" title="31"></a>31</h1><p>不同意，ip协议是网络层协议，ipv4协议是ip协议的第四版。</p>
+<h1 id="32"><a href="#32" class="headerlink" title="32"></a>32</h1><p>答案同第8题。</p>
+<blockquote>
+<p>在基于目的地址的转发中，使用的是匹配加动作：匹配是指查询转发表，动作是指将分组发送给有特定输出端口的交换结构。</p>
+<p>而在通用转发中，同样使用的是匹配加动作，但是匹配是指查询分组中的多个字段，而动作可以是转发，负载均衡，重写首部值，有意识地丢弃分组。</p>
+<p>可以说，通用转发是一般化的基于目的地址的转发。</p>
+</blockquote>
+<h1 id="33"><a href="#33" class="headerlink" title="33"></a>33</h1><p>同上。</p>
+<h1 id="34"><a href="#34" class="headerlink" title="34"></a>34</h1><p>同上。</p>
+<h1 id="35"><a href="#35" class="headerlink" title="35"></a>35</h1><p>匹配：目的/源ip，ip协议。</p>
+<p>不匹配：目的/源mac，以太网类型。</p>
+	
 	</div>
 	
 	<div id="current-post-cover" data-scr="/special-eureka/img/cart_cover.jpg"></div>
