@@ -1,0 +1,1189 @@
+<!--
+	作者：Sariay
+	时间：2018-09-25
+	描述：There may be a bug, but don't worry, QiLing(器灵) says that it can work normally!
+-->
+<!DOCTYPE html>
+<html class="html-loading">
+		
+
+<head><meta name="generator" content="Hexo 3.9.0">
+	<meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
+  <title>
+    
+      计网第四章习题 | Xugen-Ma
+    
+  </title>
+  <meta name="author" content="Xuegen">
+  <meta name="keywords" content>
+  <meta name="description" content="Stay simple, Stay naive">
+	<!-- favicon -->
+  <link rel="shortcut icon" href="/special-eureka/img/favicon.ico">
+
+  <!-- css -->
+  <link rel="stylesheet" href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="/special-eureka/css/Annie.css">
+  
+  <!-- jquery -->
+	<script src="/special-eureka/js/jquery.min.js"></script>
+
+  <!-- leancloud -->
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
+<script src="/special-eureka/js/leancloud.js"></script>
+</head>
+	<body>
+		<!-- Preloader -->
+
+	<div id="preloader">
+		<div class="pre-container">
+			
+				<div class="spinner">
+					<div class="double-bounce1"></div>
+					<div class="double-bounce2"></div>
+				</div>
+						
+		</div>
+	</div>
+
+
+<!-- header -->
+<header class="fixbackground" data-img-mode="normal" data-normal-src="/special-eureka/img/1.jpg" data-random-max="110" data-random-src="https://sariay.github.io/Random-img/">
+	<div class="mask">
+		<!-- Logo and navigation -->
+		<div class="h-header">
+			<div id="logo">
+				<a href="/">
+						
+						<img src="/special-eureka/img/logo.png" alt="Logo">
+					
+				</a>
+			</div>
+			
+			<div id="navigation-show">
+				<ul>
+	
+		<li class="menu-home">
+			<a href="/special-eureka/" class="menu-item-home">主页</a>
+		</li>
+	
+		<li class="menu-archive">
+			<a href="/special-eureka/archives" class="menu-item-archive">归档</a>
+		</li>
+	
+		<li class="menu-categories">
+			<a href="/special-eureka/categories" class="menu-item-categories">分类</a>
+		</li>
+	
+		<li class="menu-tags">
+			<a href="/special-eureka/tags" class="menu-item-tags">标签</a>
+		</li>
+	
+		<li class="menu-about">
+			<a href="/special-eureka/about" class="menu-item-about">关于</a>
+		</li>
+	
+		<li class="menu-gallery">
+			<a href="/special-eureka/gallery" class="menu-item-gallery">相册</a>
+		</li>
+	
+
+	
+</ul>
+			</div>				
+		</div>
+
+		<!-- motto -->
+		<div class="h-body">	
+			
+				<p class="motto"></p>
+			
+		</div>
+		
+		<!-- others: such as time... -->			
+		<div class="h-footer">
+			<a href="javascript:;" id="read-more"><i class="fa fa-angle-double-down" aria-hidden="true"></i>
+			</a>
+
+			
+				<!-- 
+	This is only a demo, please go to "https://time.is" to set your city time! 
+-->
+<style type="text/css">
+	.header-date {
+		font-size: 1.6rem;
+		color: #fff;
+		position: absolute;
+		bottom: 5px;
+		right: 1rem;
+		writing-mode: tb-rl;
+	}	
+	
+	.header-date a {
+		border-bottom: none;
+	}
+
+	@media only screen and (max-width: 768 ) {
+		.header-date {
+			font-size: 1rem;
+		}			
+	}
+</style>
+<div class="header-date">
+	<a href="https://time.is/Beijing" id="time_is_link" rel="nofollow" ></a>
+	<span id="Beijing_z43d"></span>
+</div>
+<script src="//widget.time.is/zh.js"></script>
+<script>
+	time_is_widget.init({
+		Beijing_z43d:{
+			template:"DATE", 
+			date_format:"year年 monthname dnum日"
+		}
+	});
+</script>
+			
+		</div>
+	</div>
+</header>
+
+<div id="navigation-hide">
+	<!-- Progress bar -->
+	<div id="progress-bar"></div>
+
+	<!-- Progress percent -->
+	<div id="progress-percentage"><h1>0.0%</h1></div>
+
+	<div class="toc-switch"><span class="switch-button">目录</span></div>
+
+	<!-- Page title -->
+	<p>
+		
+			当前文章&nbsp;:&nbsp;《计网第四章习题》
+		
+	</p>
+
+	<!-- Nav trigger for navigation-H-->
+	<a class="nav-trigger"><span></span></a>
+</div>
+
+<!-- Navigation in div(id="navigation-H") -->
+<nav class="nav-container" id="cd-nav">
+	<div class="nav-header">
+		<h3>Navigation</h3>
+		<a href="javascript:;" class="nav-close"></a>
+	</div>
+	<div class="nav-body">
+		<ul>
+	
+		<li class="menu-home">
+			<a href="/special-eureka/" class="menu-item-home">主页</a>
+		</li>
+	
+		<li class="menu-archive">
+			<a href="/special-eureka/archives" class="menu-item-archive">归档</a>
+		</li>
+	
+		<li class="menu-categories">
+			<a href="/special-eureka/categories" class="menu-item-categories">分类</a>
+		</li>
+	
+		<li class="menu-tags">
+			<a href="/special-eureka/tags" class="menu-item-tags">标签</a>
+		</li>
+	
+		<li class="menu-about">
+			<a href="/special-eureka/about" class="menu-item-about">关于</a>
+		</li>
+	
+		<li class="menu-gallery">
+			<a href="/special-eureka/gallery" class="menu-item-gallery">相册</a>
+		</li>
+	
+
+	
+</ul>
+	</div>
+	<div class="nav-footer">
+		<ul>
+	
+		<li>
+			<a href="https://github.com/Xugen-Ma" target="_blank">
+				<i class="fa fa-github"></i>
+			</a>
+		</li>
+			
+</ul>
+
+	</div>
+</nav>
+			
+		<!--main-->
+		<main>
+			<!--
+	时间：2018-11-17
+	描述：
+		插件名称：katelog.min.js
+		插件作者：KELEN
+		插件来源: https://github.com/KELEN/katelog
+-->
+
+	
+		<div class="layout-toc">
+			<div id="layout-toc">
+				<div class="k-catelog-list" id="catelog-list" data-title="文章目录"></div>
+			</div>
+		</div>
+
+		
+		<script src="/special-eureka/plugin/toc/katelog.min.js"></script>
+
+		
+	 
+
+<div class="layout-post">
+	<div id="layout-post">
+	<div class="article-title">
+		<i class="fa fa-paper-plane-o" aria-hidden="true"></i>
+		
+	<a href="/special-eureka/2019/10/26/计网第四章习题/" itemprop="url">
+		计网第四章习题
+	</a>
+
+	</div>
+
+	<div class="article-meta">
+		<span>
+			<i class="fa fa-calendar"></i>
+			
+
+
+	发布于
+
+	<a href="/special-eureka/2019/10/26/计网第四章习题/" itemprop="url">
+		<time datetime="2019-10-26T11:35:47.000Z" itemprop="datePublished">
+	  		2019-10-26
+	  </time>
+	</a>
+	&nbsp;
+
+
+
+
+
+			
+
+
+
+
+	更新于
+
+	<a href="/special-eureka/2019/10/26/计网第四章习题/" itemprop="url">
+		<time datetime="2019-10-26T11:35:47.000Z" itemprop="dateUpdated">
+	  		2019-10-26
+	  </time>
+	</a> 
+
+
+
+		</span>
+		<span>
+			<i class="fa fa-tags"></i>
+			
+	
+		<a href="/special-eureka/tags/计算机网络/" class=" ">
+			计算机网络
+		</a>
+	
+		
+		</span>
+		
+		
+
+
+
+	</div>
+
+	<div class="article-content" id="article-content">
+		<h1 id="1"><a href="#1" class="headerlink" title="1"></a>1</h1><h2 id="a"><a href="#a" class="headerlink" title="a"></a>a</h2><table>
+<thead>
+<tr>
+<th>目的主机</th>
+<th>接口</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>H3</td>
+<td>3</td>
+</tr>
+</tbody></table>
+<h2 id="b"><a href="#b" class="headerlink" title="b"></a>b</h2><blockquote>
+<p>首先，路由表长这样：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">&gt; IPv4 路由表</span><br><span class="line">&gt; ===========================================================================</span><br><span class="line">&gt; 活动路由:</span><br><span class="line">&gt; 网络目标					网络掩码          网关       接口   跃点数</span><br><span class="line">&gt;        0.0.0.0          0.0.0.0      192.168.3.1      192.168.3.2     35</span><br><span class="line">&gt;      127.0.0.0        255.0.0.0            在链路上         127.0.0.1    331</span><br><span class="line">&gt;      127.0.0.1  255.255.255.255            在链路上         127.0.0.1    331</span><br><span class="line">&gt; 127.255.255.255  255.255.255.255            在链路上         127.0.0.1    331</span><br><span class="line">&gt;    169.254.0.0      255.255.0.0            在链路上   169.254.122.102    281</span><br><span class="line">&gt; 169.254.122.102  255.255.255.255            在链路上   169.254.122.102    281</span><br><span class="line">&gt; 169.254.255.255  255.255.255.255            在链路上   169.254.122.102    281</span><br><span class="line">&gt;   172.28.49.80  255.255.255.240            在链路上      172.28.49.81   5256</span><br><span class="line">&gt;   172.28.49.81  255.255.255.255            在链路上      172.28.49.81   5256</span><br><span class="line">&gt;   172.28.49.95  255.255.255.255            在链路上      172.28.49.81   5256</span><br><span class="line">&gt;    192.168.3.0    255.255.255.0            在链路上       192.168.3.2    291</span><br><span class="line">&gt;    192.168.3.2  255.255.255.255            在链路上       192.168.3.2    291</span><br><span class="line">&gt;  192.168.3.255  255.255.255.255            在链路上       192.168.3.2    291</span><br><span class="line">&gt;      224.0.0.0        240.0.0.0            在链路上         127.0.0.1    331</span><br><span class="line">&gt;      224.0.0.0        240.0.0.0            在链路上   169.254.122.102    281</span><br><span class="line">&gt;      224.0.0.0        240.0.0.0            在链路上       192.168.3.2    291</span><br><span class="line">&gt;      224.0.0.0        240.0.0.0            在链路上      172.28.49.81   5256</span><br><span class="line">&gt; 255.255.255.255  255.255.255.255            在链路上         127.0.0.1    331</span><br><span class="line">&gt; 255.255.255.255  255.255.255.255            在链路上   169.254.122.102    281</span><br><span class="line">&gt; 255.255.255.255  255.255.255.255            在链路上       192.168.3.2    291</span><br><span class="line">&gt; 255.255.255.255  255.255.255.255            在链路上      172.28.49.81   5256</span><br><span class="line">&gt; ===========================================================================</span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure>
+</blockquote>
+<blockquote>
+<p>网络目标就是目的主机，掩码、网关不考虑，接口没有用数字标识，而是采用了所对应的ip地址。</p>
+<table>
+<thead>
+<tr>
+<th>目的主机</th>
+<th>接口</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>H3</td>
+<td>3</td>
+</tr>
+<tr>
+<td>H3</td>
+<td>4</td>
+</tr>
+</tbody></table>
+<p>所以这样并不可以。</p>
+</blockquote>
+<p>没有答案，因为路由表中的字段并没有包含源主机的字段，所以路由器无法区分。</p>
+<h1 id="2"><a href="#2" class="headerlink" title="2"></a>2</h1><p><img src="2.svg" alt="结构如图"></p>
+<h2 id="a-1"><a href="#a-1" class="headerlink" title="a"></a>a</h2><p>不能，共享总线的情况下同一时刻只能有一个端口对总线进行读/写。</p>
+<h2 id="b-1"><a href="#b-1" class="headerlink" title="b"></a>b</h2><p>不能，经过共享总线系统。</p>
+<h2 id="c"><a href="#c" class="headerlink" title="c"></a>c</h2><p>不能，即使纵横式的是非阻塞的，但是这仅仅对于一个端口没有包进行传输的情况。</p>
+<p>如果在同一时刻，有多个输入端口想向同一输出端口输出时，构成竞争，只能传送一个分，其他分组需等待，因为一条给定总线在某一时刻只能传输一个分组。</p>
+<h2 id="3"><a href="#3" class="headerlink" title="3"></a>3</h2><blockquote>
+<p>Network delay including four parts:</p>
+<p>Processing delay - time routers take to process the packet header.</p>
+<p>Queuing delay - time the packet spends in routing queues</p>
+<p>Transmission delay - time it takes to push the packet’s bits onto the link.</p>
+<p>Propagation delay - time for a signal to reach its destination.</p>
+<p>————————————————<br>版权声明：本文为CSDN博主「zhangskd」的原创文章，遵循 CC 4.0 BY-SA 版权协议，转载请附上原文出处链接及本声明。<br>原文链接：<a href="https://blog.csdn.net/zhangskd/article/details/18224897" target="_blank" rel="noopener">https://blog.csdn.net/zhangskd/article/details/18224897</a></p>
+</blockquote>
+<p>在本题中，D应当代表排队时延。</p>
+<ul>
+<li>在内存和总线结构中，无法并发，只能排队，最大排队时延最大，为$(n-1)\times D$</li>
+<li>在纵横式时，由于是并发，无需排队，所以最大排队时延为$0$。</li>
+</ul>
+<blockquote>
+<p>如何算出来的？</p>
+<p>就像火车过桥时，车最后出来才算火车把桥过完一样，最大排队时延应当从输入端口接收到第一个分组起，到最后一个分组离开交换结构止。</p>
+<p>现在有$n$个分组传送进来，内存结构和总线结构，每次只能发一个，发一个的时延为$D$，最后一个发时它已经等了$(n-1)$次了。</p>
+</blockquote>
+<h1 id="4"><a href="#4" class="headerlink" title="4"></a>4</h1><p><img src="4.svg" alt="结构如图"></p>
+<blockquote>
+<p>最小时隙为3：</p>
+<ul>
+<li>时隙1：<ul>
+<li>i1-&gt;x</li>
+<li>i2-&gt;y</li>
+<li>i3：竞争，无法发送。</li>
+</ul>
+</li>
+<li>时隙2：<ul>
+<li>i1：空闲。</li>
+<li>i2-&gt;x</li>
+<li>i3-&gt;y</li>
+</ul>
+</li>
+<li>时隙3：<ul>
+<li>i1,i2空闲。</li>
+<li>i3-&gt;z</li>
+</ul>
+</li>
+</ul>
+</blockquote>
+<p>最大也是3，因为i2,i3总是会竞争，导致浪费一个时隙。</p>
+<blockquote>
+<p>假设，i3第一个分组加个x，会如何？</p>
+</blockquote>
+<h1 id="5"><a href="#5" class="headerlink" title="5"></a>5</h1><blockquote>
+<p>翻译成十进制：</p>
+<table>
+<thead>
+<tr>
+<th>起始</th>
+<th>终止</th>
+<th>链路接口</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>224.0.0.0</td>
+<td>224.63.255.255</td>
+<td>0</td>
+</tr>
+<tr>
+<td>224.64.0.0</td>
+<td>224.64.255.255</td>
+<td>1</td>
+</tr>
+<tr>
+<td>224.65.0.0</td>
+<td>225.65.255.255</td>
+<td>2</td>
+</tr>
+<tr>
+<td>其他</td>
+<td>其他</td>
+<td>3</td>
+</tr>
+</tbody></table>
+</blockquote>
+<h2 id="a-2"><a href="#a-2" class="headerlink" title="a"></a>a</h2><table>
+<thead>
+<tr>
+<th>序号</th>
+<th>前缀匹配</th>
+<th>链路接口</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>1</td>
+<td>11100000 00</td>
+<td>0</td>
+</tr>
+<tr>
+<td>2</td>
+<td>11100000 01000000</td>
+<td>1</td>
+</tr>
+<tr>
+<td>3</td>
+<td>1110000</td>
+<td>2</td>
+</tr>
+<tr>
+<td>4</td>
+<td>11100001  1(225.128)</td>
+<td>3</td>
+</tr>
+<tr>
+<td>5</td>
+<td>其他</td>
+<td>3</td>
+</tr>
+</tbody></table>
+<blockquote class="colorquote warning"><p>对于第四存疑。</p></blockquote>
+
+<h2 id="b-2"><a href="#b-2" class="headerlink" title="b"></a>b</h2><p>(1)-&gt;5-&gt;3</p>
+<p>(2)-&gt;3-&gt;2</p>
+<p>(3)-&gt;4-&gt;3</p>
+<h1 id="6"><a href="#6" class="headerlink" title="6"></a>6</h1><table>
+<thead>
+<tr>
+<th>起始</th>
+<th>终止</th>
+<th>链路接口</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>00000000</td>
+<td>00111111</td>
+<td>0</td>
+</tr>
+<tr>
+<td>01000000</td>
+<td>01011111</td>
+<td>1</td>
+</tr>
+<tr>
+<td>01100000</td>
+<td>01111111</td>
+<td>2</td>
+</tr>
+<tr>
+<td>10000000</td>
+<td>10111111</td>
+<td>2</td>
+</tr>
+<tr>
+<td>11000000</td>
+<td>11111111</td>
+<td>3</td>
+</tr>
+</tbody></table>
+<p>接口0：$2^6=64$</p>
+<p>接口1：$2^5=32$</p>
+<p>接口2：$2^5+2^6=96$</p>
+<p>接口3：$2^6=64$</p>
+<h1 id="7"><a href="#7" class="headerlink" title="7"></a>7</h1><table>
+<thead>
+<tr>
+<th>起始</th>
+<th>终止</th>
+<th>链路接口</th>
+<th>地址个数</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>11000000</td>
+<td>11011111</td>
+<td>0</td>
+<td>32</td>
+</tr>
+<tr>
+<td>10000000</td>
+<td>10111111</td>
+<td>1</td>
+<td>64</td>
+</tr>
+<tr>
+<td>11100000</td>
+<td>11111111</td>
+<td>2</td>
+<td>32</td>
+</tr>
+<tr>
+<td>00000000</td>
+<td>01100000</td>
+<td>3</td>
+<td>128</td>
+</tr>
+</tbody></table>
+<h1 id="8"><a href="#8" class="headerlink" title="8"></a>8</h1><p>223.1.17=11011111 00000001 00010001 00000000</p>
+<p>​        11011111 00000001 00010001 01000000</p>
+<p>​            </p>
+<p>​            </p>
+<table>
+<thead>
+<tr>
+<th>60-&gt;$2^6 =64$</th>
+<th>11011111 00000001 00010001 01000000</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>90-&gt;$2^7=128$</td>
+<td>11011111 00000001 00010001 10000000</td>
+</tr>
+<tr>
+<td>12-&gt;$2^4=16$</td>
+<td>11011111 00000001 00010001 10010000</td>
+</tr>
+</tbody></table>
+<p>223.1.17.64/26 子网1</p>
+<p>223.1.17.128/25 子网2</p>
+<p>223.1.17.160/27 子网3</p>
+<h1 id="9"><a href="#9" class="headerlink" title="9"></a>9</h1><blockquote>
+<p>200.23.16/21                                                    0</p>
+<p>200.23.24/24                                                    1</p>
+<p>200.23.24/21                                                    2</p>
+<p>otherwise                                                      3   </p>
+</blockquote>
+<h1 id="10"><a href="#10" class="headerlink" title="10"></a>10</h1><blockquote>
+<p>Destination Address                              Link Interface</p>
+<p>11100000  00  (224.0/10)                               0</p>
+<p>11100000  01000000  (224.64/16)                  1</p>
+<p>1110000  (224/8)                                        2</p>
+<p>11100001  1  (225.128/9)                         3     </p>
+<p>otherwise                             3</p>
+</blockquote>
+<h1 id="11"><a href="#11" class="headerlink" title="11"></a>11</h1><h2 id="a-3"><a href="#a-3" class="headerlink" title="a"></a>a</h2><p>128.119.40.128到128.119.40.191</p>
+<h2 id="b-3"><a href="#b-3" class="headerlink" title="b"></a>b</h2><p>128.119.40.64/28</p>
+<p>128.119.40.80/28</p>
+<p>128.119.40.96/28</p>
+<p>128.119.40.112/28</p>
+<h1 id="12"><a href="#12" class="headerlink" title="12"></a>12</h1><h2 id="a-4"><a href="#a-4" class="headerlink" title="a"></a>a</h2><blockquote>
+<p>1111 1110 0000 0000-1111 1111 1111 1111=512</p>
+<p>A:250(8), B:120(7), C:120(7), D:2(1),E2(1),F:2(1)</p>
+<ul>
+<li>1111 1110 (256)A<ul>
+<li>1111 1110 0000 00xx (4)F</li>
+<li>1111 1110 0000 011x(2)D</li>
+<li>1111 1110 0000 010x(2)E</li>
+</ul>
+</li>
+<li>1111 1111 0000 0000 - 1111 1111 1111 1111(256)<ul>
+<li>1111 1111 0(128)B</li>
+<li>1111 1111 1(128)C</li>
+</ul>
+</li>
+</ul>
+</blockquote>
+<p>Subnet A: 214.97.255/24  (256 addresses)</p>
+<p>Subnet B: 214.97.254.0/25  - 214.97.254.0/29 (128-8 = 120 addresses)</p>
+<p>Subnet C: 214.97.254.128/25 (128 addresses)</p>
+<p>Subnet D: 214.97.254.0/31  (2 addresses)</p>
+<p>Subnet E: 214.97.254.2/31  (2 addresses)</p>
+<p>Subnet F: 214.97.254.4/30  (4 addresses)</p>
+<h2 id="b-4"><a href="#b-4" class="headerlink" title="b"></a>b</h2><blockquote>
+<p>Router 1</p>
+</blockquote>
+<p>​           </p>
+<p>​            Longest Prefix Match                           Outgoing Interface</p>
+<p>​            11010110 01100001 11111111                                      Subnet A</p>
+<p>​            11010110 01100001 11111110 0000000                       Subnet D</p>
+<p>​            11010110 01100001 11111110 000001                         Subnet F</p>
+<blockquote>
+<p>Router 2</p>
+</blockquote>
+<p>​           </p>
+<p>​            Longest Prefix Match                           Outgoing Interface</p>
+<p>​            11010110 01100001 11111111  0000000                       Subnet D</p>
+<p>​            11010110 01100001 11111110  0                               Subnet B</p>
+<p>​            11010110 01100001 11111110  0000001                          Subnet E</p>
+<blockquote>
+<p>Router 3</p>
+</blockquote>
+<p>​           </p>
+<p>​            Longest Prefix Match                           Outgoing Interface</p>
+<p>​            11010110 01100001 11111111  000001                        Subnet F</p>
+<p>​            11010110 01100001 11111110  0000001                      Subnet E</p>
+<p>​            11010110 01100001 11111110 1                                   Subnet C</p>
+<h1 id="13"><a href="#13" class="headerlink" title="13"></a>13</h1><blockquote>
+<p>略</p>
+</blockquote>
+<h1 id="14"><a href="#14" class="headerlink" title="14"></a>14</h1><p>2400字节，其中有效载荷为2380字节。</p>
+<p>mtu为700，有效载荷为700-20=680。分为4片，最后一片携带340字节有效载荷。</p>
+<table>
+<thead>
+<tr>
+<th>片数</th>
+<th>标志</th>
+<th>片偏移</th>
+<th>标识号</th>
+<th>数据报长度</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>1</td>
+<td>1</td>
+<td>0</td>
+<td>422</td>
+<td>700</td>
+</tr>
+<tr>
+<td>2</td>
+<td>1</td>
+<td>680</td>
+<td>422</td>
+<td>700</td>
+</tr>
+<tr>
+<td>3</td>
+<td>1</td>
+<td>1360</td>
+<td>422</td>
+<td>700</td>
+</tr>
+<tr>
+<td>4</td>
+<td>0</td>
+<td>1700</td>
+<td>422</td>
+<td>360</td>
+</tr>
+</tbody></table>
+<blockquote>
+<p>片偏移：IP数据报被分片后，各片数据区在原来IP数据区中的位置用13位片偏移来表示。</p>
+<p>片未完标志：如果被置1，说明该数据报不是分片后的最后一个数据报，最后一个数据报的该位被置0。</p>
+<p>标识：一个数据报的所有分片具有相同的标识。在IP数据报头部中，标识用16位二进制数表示，它唯一地标识主机发送的每一份数据报。在一个数据报被分片时，每个分片仅把数据报“标识”字段的值原样复制一份。</p>
+</blockquote>
+<h1 id="15"><a href="#15" class="headerlink" title="15"></a>15</h1><blockquote>
+<p>将题中的$MB$理解为$MiB$。即 $1MiB=2^{20}B$。</p>
+</blockquote>
+<p>总携带数据为：$5MB$。</p>
+<p>数据报有效载荷为：$1,500-20-20=1,460B$。</p>
+<p>则须分片：$5MB \div 1,460B=3,592 $。</p>
+<h1 id="16"><a href="#16" class="headerlink" title="16"></a>16</h1><p>家庭ip:</p>
+<p>192.168.1.1-192.168.1.4，路由器链路接口为192.168.1.5。</p>
+<table>
+<thead>
+<tr>
+<th>WAN</th>
+<th>LAN</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>24.34.112.235:4001</td>
+<td>192.168.1.1:3345</td>
+</tr>
+<tr>
+<td>24.34.112.235:4002</td>
+<td>192.168.1.1:3346</td>
+</tr>
+<tr>
+<td>24.34.112.235:4003</td>
+<td>192.168.1.1:3347</td>
+</tr>
+<tr>
+<td>24.34.112.235:4004</td>
+<td>192.168.1.1:3348</td>
+</tr>
+</tbody></table>
+<h1 id="17"><a href="#17" class="headerlink" title="17"></a>17</h1><h2 id="a-5"><a href="#a-5" class="headerlink" title="a"></a>a</h2><p>可以，由于数是随机产生的，之后是顺序增长的，所以我们可以收集所有包的标识号，并构造出x-y散列图，观察能够得到多少直线，就能够得到。</p>
+<h2 id="b-5"><a href="#b-5" class="headerlink" title="b"></a>b</h2><p>有极小的可能可以，计算机中的数据是伪随机的，只要掌握产生随机数所用到的算法，参数，依旧可以得到，虽然有很大的困难。</p>
+<h1 id="18"><a href="#18" class="headerlink" title="18"></a>18</h1><p>可以，具体实现见<a href="https://blog.csdn.net/iw1210/article/details/52016174" target="_blank" rel="noopener">TCP协议点对点（P2P）通讯（或者说NAT穿越）的实现方案</a>。</p>
+<h1 id="19"><a href="#19" class="headerlink" title="19"></a>19</h1><blockquote>
+<p>h5或h6发往h1,h2从o2-&gt;i1</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>Match</th>
+<th>Action</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Ingress Port=1; ip src=10.3.0.*; ip dst=10.1.*.*</td>
+<td>forward(2)</td>
+</tr>
+<tr>
+<td>Ingress Port=2; ip src=10.1.*.*; ip dst=10.3.*.*</td>
+<td>forward(1)</td>
+</tr>
+<tr>
+<td>Ingress Port=1; ip dst=10.2.0.3<br>Ingress Port=1; ip dst=10.2.0.4<br>Ingress Port=2; ip dst=10.2.0.3<br>Ingress Port=2; ip dst=10.2.0.4</td>
+<td>forward(3)<br>forward(4)<br>forward(3)<br>forward(4)</td>
+</tr>
+<tr>
+<td>Ingress Port=3<br>Ingress Port=4</td>
+<td>forward(4)<br>forward(3)</td>
+</tr>
+</tbody></table>
+<h1 id="20"><a href="#20" class="headerlink" title="20"></a>20</h1><table>
+<thead>
+<tr>
+<th>Match</th>
+<th>Action</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Ingress Port=3; ip dst=10.1.*.*<br>Ingress Port=3; ip dst=10.3.*.*</td>
+<td>forward(2)<br>forward(2)</td>
+</tr>
+<tr>
+<td>Ingress Port=4; ip dst=10.1.*.*Ingress Port=4; ip dst=10.3.*.*</td>
+<td>forward(1)forward(1)</td>
+</tr>
+</tbody></table>
+<h1 id="21"><a href="#21" class="headerlink" title="21"></a>21</h1><h2 id="s1"><a href="#s1" class="headerlink" title="s1"></a>s1</h2><table>
+<thead>
+<tr>
+<th>Match</th>
+<th>Action</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>ip src=10.2.*.* ip dst=10.1.0.1<br>ip src=10.2.*.* ip dst=10.1.0.2</td>
+<td>forward(2)<br>forward(3)</td>
+</tr>
+<tr>
+<td>ip src=10.2.*.*; ip dst=10.3.*.*</td>
+<td>forward(1)</td>
+</tr>
+</tbody></table>
+<h2 id="s3"><a href="#s3" class="headerlink" title="s3"></a>s3</h2><table>
+<thead>
+<tr>
+<th>Match</th>
+<th>Action</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>IP Src = 10.2.*.*; IP Dst = 10.3.0.6<br>IP Src = 10.2.*.*; IP Dst = 10.3.0.5</td>
+<td>Forward(1)<br>Forward(2)</td>
+</tr>
+<tr>
+<td>IP Src = 10.2.*.*; IP Dst = 10.1.*.*</td>
+<td>Forward(3)</td>
+</tr>
+</tbody></table>
+<h1 id="22"><a href="#22" class="headerlink" title="22"></a>22</h1><h2 id="a-6"><a href="#a-6" class="headerlink" title="a"></a>a</h2><table>
+<thead>
+<tr>
+<th>Match</th>
+<th>Action</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>IP Src = 10.1.0.1; IP Dst = 10.2.0.3</td>
+<td>Forward(3)</td>
+</tr>
+<tr>
+<td>IP Src = 10.1.0.1; IP Dst = 10.2.0.4</td>
+<td>Forward(4)</td>
+</tr>
+<tr>
+<td>IP Src = 10.3.0.6; IP Dst = 10.2.0.3</td>
+<td>Forward(3)</td>
+</tr>
+<tr>
+<td>IP Src = 10.3.0.6; IP Dst = 10.2.0.4</td>
+<td>Forward(4)</td>
+</tr>
+</tbody></table>
+<h2 id="b-6"><a href="#b-6" class="headerlink" title="b"></a>b</h2><table>
+<thead>
+<tr>
+<th>Match</th>
+<th>Action</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>IP Src =.*.*.*.*; IP Dst = 10.2.0.3; port= TCP</td>
+<td>Forward(3)</td>
+</tr>
+<tr>
+<td>IP Src =.*.*.*.*; IP Dst = 10.2.0.4; port= TCP</td>
+<td>Forward(4)</td>
+</tr>
+</tbody></table>
+<h2 id="c-1"><a href="#c-1" class="headerlink" title="c"></a>c</h2><table>
+<thead>
+<tr>
+<th>Match</th>
+<th>Action</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>IP Src =.*.*.*.*; IP Dst = 10.2.0.3</td>
+<td>Forward (3)</td>
+</tr>
+</tbody></table>
+<h2 id="d"><a href="#d" class="headerlink" title="d"></a>d</h2><table>
+<thead>
+<tr>
+<th>Match</th>
+<th>Action</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>IP Src = 10.1.0.1; IP Dst = 10.2.0.3;port = UDP</td>
+<td>Forward(3)</td>
+</tr>
+</tbody></table>
+	
+	</div>
+	
+	<div id="current-post-cover" data-scr="/special-eureka/img/cart_cover.jpg"></div>
+
+	<!-- relate post, comment...-->
+	<div class="investment-container">
+		<div class="investment-header">
+			<div class="investment-title-1">
+				<div class="on">相关文章</div>
+				<div>评论</div>
+				<div>分享</div>
+			</div>
+			<div class="investment-title-2">	            
+				
+	<span>
+		<a href="javascript: window.scrollTo(0, 0);">返回顶部</a>
+		
+		
+			<a href="/special-eureka/2019/10/26/想补番列表/" title="想补番列表" rel="next">
+				下一篇&raquo;
+			</a>
+			
+	</span>
+
+
+      		
+			</div>	
+		</div>
+		
+		<div class="investment-content">
+			<div class="investment-content-list">
+				
+
+<div class="relate-post">
+	
+		<div>Please check the post_relate setting in config.yml of hexo-theme-Annie! You should make sure 'postsEnable == true' and the number of site posts greater than 1.</div>	
+	
+</div>	
+			</div>
+			<div class="investment-content-list">
+				<div class="layout-comment">
+
+	
+
+		
+
+			<!-- I don't know !!!-->
+			<div>Please check the comment setting in config.yml of hexo-theme-Annie!</div>
+			
+		
+		
+	
+
+</div>
+			</div>
+			<div class="investment-content-list">
+				<div class="layout-share">
+	
+	
+
+		
+			
+			<!-- socialShare share -->
+			<div class="social-share"></div>
+
+<!--  css & js -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/css/share.min.css">
+<script async src="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/js/social-share.min.js"></script>
+			
+		
+		
+	
+</div>
+
+
+			</div>
+		</div>	
+	</div>
+	</div>
+</div>
+
+
+
+	<!-- leancloud -->
+	<!--
+	时间：2018-11-27
+	描述：
+		文章访问量：visitors
+		文章喜欢量：likes	
+		文章排行榜：topNPost
+		其他得说明：
+			01-Cookie相关的函数 
+				https://blog.csdn.net/somehow1002/article/details/78511541（Author：somehow1002）
+			02-visitors相关的函数 
+				https://blog.csdn.net/u013553529/article/details/63357382（Author：爱博客大伯）
+				https://notes.doublemine.me/2015-10-21-为NexT主题添加文章阅读量统计功能.html（Author：夏末）
+			03-topNPost相关的函数
+				https://hoxis.github.io/hexo-next-read-rank.html（Author：hoxis）
+			04-likes相关的函数，
+				参考了01 & 02进行简单的设计与实现
+-->
+
+
+	
+
+
+<!-- show math formula -->
+
+	<script type="text/javascript" async src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+	<script type="text/x-mathjax-config">
+		MathJax.Hub.Config(
+			{ 
+				tex2jax: {
+					inlineMath: [['$','$'], ['\\(','\\)']]
+				} 
+			}
+		);
+	</script>
+
+
+
+	 
+	<script src="/special-eureka/plugin/clipboard/clipboard.js"></script>
+	<script>
+		// Copy code !
+	    function codePreprocessing() {
+	        $("#article-content .highlight").each(function() {
+
+	            $(this).wrap('<div id="post-code"></div>');
+
+	        })
+
+	        $("#article-content #post-code").each(function() {
+
+	            $(this).prepend('<nav class="copy-nav"><span><i class="code-language"></i></span></nav>');
+
+	        })
+
+	        $("#article-content .copy-nav").each(function() {
+	            var temp = $(this).next().attr('class'),
+	                language = ((temp.length > 9) && (temp != null)) ? temp.substr(10) : "none"; //why 9? Need to check language?
+
+	            $(this).find('.code-language').text(language);
+
+	            $(this).append('<span class="copy-btn"><i class="fa fa-copy" aria-hidden="true"></i></span>');
+
+	        });
+	    }
+
+		function codeCopy() {
+		    $('#article-content #post-code').each(function(i) {
+		        var codeCopyId = 'codeCopy-' + i;
+
+		        var codeNode = $(this).find('.code'),
+		            copyButton = $(this).find('.copy-btn');
+
+		        codeNode.attr('id', codeCopyId);
+		        copyButton.attr('data-clipboard-target-id', codeCopyId);
+		    })
+
+		    
+			var clipboard = new ClipboardJS('.copy-btn', {
+					target: function(trigger) {
+						return document.getElementById(trigger.getAttribute('data-clipboard-target-id'));
+					}
+		      	});
+
+			//pure js
+			function showTooltip(elem, msg) {		   
+				elem.setAttribute('aria-label', msg);
+				elem.setAttribute('class', 'copy-btn copy-status');
+				setTimeout(function() {
+					elem.setAttribute('class', 'copy-btn');
+				}, 2000);
+			}
+
+			clipboard.on('success', function(e) {
+			    e.clearSelection();
+			    console.info('Action:', e.action);		   
+			    console.info('Trigger:', e.trigger);
+			    showTooltip(e.trigger, 'Copied!');
+			    
+			});
+			clipboard.on('error', function(e) {
+			    console.error('Action:', e.action);
+			    console.error('Trigger:', e.trigger);
+			});
+		
+
+		}
+
+		if ($('.layout-post').length) {
+		    codePreprocessing();
+		    codeCopy();
+		} 
+	</script>
+
+
+
+
+
+<link rel="stylesheet" href="/special-eureka/plugin/fancybox/jquery.fancybox.css">
+<script src="/special-eureka/plugin/fancybox/jquery.fancybox.js"></script>
+
+<script type="text/javascript">
+	var titleID = $('.article-title a'),
+		imageID = $('.article-content img'),
+		videoID = $('.article-content video');
+
+	var postTitle = titleID.text() ? titleID.text() : "No post title!";
+
+	imageID.each(function() {
+		var imgPath = $(this).attr('src'),
+			imgTitle = $(this).attr('alt') ? $(this).attr('alt') : "No image description!";
+
+		//给每个匹配的<img>元素打包, 即添加父元素<a>
+		$(this).wrap('<a data-fancybox="gallery" data-caption=" 《 ' + postTitle + ' 》 ' + imgTitle + ' "  href=" ' + imgPath + ' "> </a>');
+	});
+
+	videoID.each(function() {
+		var videoPath = $(this).attr('src');
+
+		//给每个匹配的<img>元素打包, 即添加父元素<a>
+		$(this).wrap('<a data-fancybox href=" ' + videoPath + ' "> </a>');
+	});
+	//TODO：支持html5 video
+
+	if($('#layout-post').length) {
+		$('[data-fancybox="gallery"]').fancybox({
+			loop: true,
+			buttons: [
+				"zoom",
+				"share",
+				"slideShow",
+				"fullScreen",
+				//"download",
+				"thumbs",
+				"close"
+			],
+			protect: false
+		});
+	}
+</script>
+		</main>
+
+		<!--footer-->
+		<footer>
+	<div class="social">
+		<ul>
+	
+		<li>
+			<a href="https://github.com/Xugen-Ma" target="_blank">
+				<i class="fa fa-github"></i>
+			</a>
+		</li>
+			
+</ul>
+
+	</div>
+		
+	<div class="copyright">
+		<p>
+			 
+				&copy;2017 - 2019, content by Xuegen. All Rights Reserved.
+			
+			
+			
+
+	<!-- busuanzi -->
+	<!-- busuanzi -->
+
+		
+	<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+	
+
+		<span id="busuanzi_container_page_pv">
+	  		本文总阅读量<span id="busuanzi_value_page_pv"></span>次
+		</span>
+
+	
+
+
+
+
+		</p>
+		<p>
+			<a href="http://hexo.io/" title="Hexo" target="_blank" rel="noopener">Hexo</a> Theme <a href="https://github.com/Sariay/hexo-theme-Annie" title="Annie" target="_blank" rel="noopener">Annie</a> by Sariay.
+			<a href="javascript:zh_tran('s');" class="zh_click" id="zh_click_s">简体</a> 
+			<a href="javascript:zh_tran('t');" class="zh_click" id="zh_click_t">繁體</a>				
+		</p>
+	</div>		
+</footer>
+		
+	<!-- set '1' to show motto in all pages! -->
+
+	<script src="/special-eureka/plugin/motto/motto.js"></script>
+	
+	<script type="text/javascript">
+		$(".motto").html( getMingYanContent() );
+	</script>	
+
+
+
+
+
+<!-- love effect -->
+
+
+<!-- back to top -->
+
+	
+	<div id="totop">
+  		<a href="javascript:;"  name="TOTOP" class="fa fa-arrow-up" ></a>
+	</div>
+
+
+
+
+<!-- site analysis -->
+
+
+	<!-- site-analysis -->
+	
+	
+	
+	
+	
+ 
+
+<script src="/special-eureka/plugin/vibrant/vibrant.js"></script>
+<script src="/special-eureka/plugin/chinese/chinese.js"></script>
+<script src="/special-eureka/plugin/imgLazyLoader/yall.min.js"></script>
+<script src="/special-eureka/plugin/imgResize/jquery.resizeimagetoparent.min.js"></script>
+<script src="/special-eureka/plugin/nicescroll/jquery.nicescroll.js"></script>
+<script src="/special-eureka/js/resizediv.js"></script>
+<script src="/special-eureka/js/main.js"></script>
+	</body>	
+</html>
